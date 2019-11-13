@@ -1,0 +1,26 @@
+{
+  "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+  "name" : "timeline",
+  "children" : [ {
+    "name" : "DESKTOP-HCRDV8N",
+    "children" : [ {
+      "name" : "10460-MainThread",
+      "children" : [ {
+        "name" : "test_1",
+        "uid" : "63fea176c7a39b3b",
+        "parentUid" : "48251446ba0787d3620440c63319bd95",
+        "status" : "failed",
+        "time" : {
+          "start" : 1573436617538,
+          "stop" : 1573436617539,
+          "duration" : 1
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "48251446ba0787d3620440c63319bd95"
+    } ],
+    "uid" : "da6ef1cebbeee1b60181ec36d50818c7"
+  } ]
+}
