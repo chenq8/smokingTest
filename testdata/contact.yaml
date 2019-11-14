@@ -1,0 +1,42 @@
+# 包名
+packagename : 'com.android.contacts'
+# 添加按钮ID
+addbt : "com.android.contacts:id/floating_action_button_container"
+# 联系人名称
+contact_name : 'test123'
+# 电话号码
+phonenumber : '10086'
+# 联系人名称输入框text
+name_input : 'First name'
+# 电话号码输入框text
+phone_input : 'Phone'
+#联系人界面关闭按钮description
+close_save_bt : "Cancel"
+# 保存按钮ID
+saveid : "com.android.contacts:id/editor_menu_save_button"
+# 保存后的电话号码元素id
+saved_phone_number : 'com.android.contacts:id/header'
+# 联系人为空时的提示
+emptytext : 'Your contacts list is empty'
+#联系人列表类名
+contact_list : 'android.widget.TextView'
+#删除按钮
+delbt : 'com.android.contacts:id/menu_delete'
+#确认删除
+do_del : 'android:id/button1'
+#进入主菜单description
+meun : "Open navigation drawer"
+#设置菜单
+setting_id: 'com.android.contacts:id/nav_settings'
+#二级菜单,返回列表
+secondary_meun :
+#  -   'My info'
+#  -   'Accounts'
+#  -   'Default account for new contacts'
+#  -   'Contacts to display'
+#  -   'Sort by'
+#  -   'Name format'
+#  -   'Phonetic name'
+#  -   'Import'
+  -   'Blocked numbers'
+  -   'About Contacts'

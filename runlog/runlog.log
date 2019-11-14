@@ -1,1 +1,15 @@
-2019-11-13 10:27:25,315,root,INFO : connect success-----modelName=pagebase.py,funcName=mconnect,codeLine=18 
+2019-11-14 11:38:07,909,root,INFO : connect success-----modelName=base.py,funcName=mconnect,codeLine=20 
+2019-11-14 11:38:08,002,root,INFO : app com.android.contacts stop done-----modelName=base.py,funcName=mapp_start,codeLine=35 
+2019-11-14 11:38:08,304,root,INFO : app com.android.contacts start done-----modelName=base.py,funcName=mapp_start,codeLine=37 
+2019-11-14 11:38:13,065,root,INFO : Found Element {'description': 'Open navigation drawer'}-----modelName=base.py,funcName=mclick,codeLine=57 
+2019-11-14 11:38:16,412,root,INFO : Found Element {'resourceId': 'com.android.contacts:id/nav_settings'}-----modelName=base.py,funcName=mclick,codeLine=57 
+2019-11-14 11:38:19,768,root,INFO : Found Element {'text': 'Blocked numbers'}-----modelName=base.py,funcName=mclick,codeLine=57 
+2019-11-14 11:38:19,768,root,INFO : clicked meun Blocked numbers-----modelName=contact_app.py,funcName=click_all_meun,codeLine=95 
+2019-11-14 11:38:21,567,root,INFO : app com.android.contacts stop done-----modelName=base.py,funcName=mapp_start,codeLine=35 
+2019-11-14 11:38:21,856,root,INFO : app com.android.contacts start done-----modelName=base.py,funcName=mapp_start,codeLine=37 
+2019-11-14 11:38:26,327,root,INFO : Found Element {'description': 'Open navigation drawer'}-----modelName=base.py,funcName=mclick,codeLine=57 
+2019-11-14 11:38:29,667,root,INFO : Found Element {'resourceId': 'com.android.contacts:id/nav_settings'}-----modelName=base.py,funcName=mclick,codeLine=57 
+2019-11-14 11:38:33,005,root,INFO : Found Element {'text': 'About Contacts'}-----modelName=base.py,funcName=mclick,codeLine=57 
+2019-11-14 11:38:33,005,root,INFO : clicked meun About Contacts-----modelName=contact_app.py,funcName=click_all_meun,codeLine=95 
+2019-11-14 11:38:33,162,root,INFO : app com.android.contacts stop done-----modelName=base.py,funcName=mapp_start,codeLine=35 
+2019-11-14 11:38:33,499,root,INFO : app com.android.contacts start done-----modelName=base.py,funcName=mapp_start,codeLine=37 
