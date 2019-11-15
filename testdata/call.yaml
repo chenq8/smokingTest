@@ -1,0 +1,26 @@
+#包名
+packagename: com.android.dialer
+#通讯录ID
+contacts_bt: com.android.dialer:id/contacts_tab
+#无联系人提示
+no_contact: You don't have any contacts yet
+#联系人列表ID,从第2个开始才是联系人，第1个为创建联系人
+contact_list: com.android.dialer:id/click_target
+#联系人卡片内拨号ID
+call_bt: com.android.contacts:id/communication_card
+#通话计时器ID
+call_time: com.android.dialer:id/contactgrid_bottom_text_switcher
+#挂断
+end_call: com.android.dialer:id/incall_end_call
+#首个联系人创建
+create_bt: com.android.dialer:id/empty_list_view_action
+# 联系人名称
+contact_name : test123
+# 电话号码
+phonenumber : 10086
+# 联系人名称输入框text
+name_input : First name
+# 电话号码输入框text
+phone_input : Phone
+# 保存按钮ID
+saveid : com.android.contacts:id/editor_menu_save_button

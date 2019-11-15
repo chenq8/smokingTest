@@ -3,10 +3,10 @@ import logging
 import os
 import time
 from runlog import testLog
-from testdata import mydata
+import yaml
 
 
-class pBase():
+class Base():
     """页面及元素操作的所有公共方法"""
 
     def __init__(self):
@@ -23,7 +23,7 @@ class pBase():
         # logging.error('connect fail')
         # logging.error(e)
 
-    def mgetinfo(self):
+    def mget_info(self):
         """取得设备信息"""
         return self.d.info
 
@@ -31,8 +31,8 @@ class pBase():
         """如果应用正在运行，刚停止后运行，如果未运行，则启动"""
     # try:
         if packagename in self.d.app_list_running():
-            self.d.app_stop(packagename)
-            logging.info('app %s stop done' % packagename)
+            self.d.app_stop_all()
+            logging.info('app %s stop all done' % packagename)
             self.d.app_start(packagename)
             logging.info('app %s start done' % packagename)
         else:
@@ -46,15 +46,23 @@ class pBase():
         """停止应用"""
         self.d.app_stop(packagename)
 
+    def mapp_stop_all(self,**kwargs):
+        """停止应用"""
+        self.d.app_stop_all(**kwargs)
+
     def findelement(self, **kwargs):
         """查找控件"""
         self.d(**kwargs)
 
-    def mclick(self, **kwargs):
+    def mclick(self,  index=None,**kwargs):
         """点击操作"""
     # try:
-        self.d(**kwargs).click()
-        logging.info('Found Element %s' % kwargs)
+        if index is not None:
+            self.d(**kwargs)[index].click()
+            logging.info('Found Element %s' % kwargs)
+        else:
+            self.d(**kwargs).click()
+            logging.info('Found Element %s' % kwargs)
     # except Exception as e:
     #     logging.error('Not Found Element %s' % kwargs)
     #     logging.error(e)
@@ -63,12 +71,10 @@ class pBase():
     def mlong_click(self, index=None,**kwargs):
         """长按操作,当前版本不支持长按操作，使用滑动到同一个点来实现长按操作"""
         if index is not None:
-            logging.info('this index is %s'%index)
             x,y = self.d(**kwargs)[index].center()
             self.d.swipe(x, y, x, y, 2)
             logging.info('Found Element %s' % kwargs)
         else:
-            logging.info('no index')
             x, y = self.d(**kwargs).center()
             self.d.swipe(x, y, x, y, 2)
             logging.info('Found Element %s' % kwargs)
@@ -100,15 +106,15 @@ class pBase():
 
     def get_data(self,filename):
         """取得APP中所有操作数据"""
-        data = mydata.MyData()
-        path = os.path.join(os.path.split(os.getcwd())[0],'testdata',filename)
-        return data.load_data(path)
+        path = os.path.join(os.path.split(os.getcwd())[0],
+                            'testdata',
+                            filename)
+        with open(path, 'r',
+                  encoding='utf-8') as file:
+            files = file.read()
+        return yaml.load(files, Loader=yaml.SafeLoader)
 
 if __name__ == '__main__':
     testLog.startLog()
-    m = pBase()
-    m.mconnect()
-    # m.sclick(text='Settings')
-    logging.info(m.d(text='Settings').info)
-    logging.info(m.d.service("uiautomator").stop())
-    logging.info('done')
+    m = Base()
+    print(m.get_data('contact.yaml')['test'])
