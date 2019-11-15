@@ -24,3 +24,25 @@ name_input : First name
 phone_input : Phone
 # 保存按钮ID
 saveid : com.android.contacts:id/editor_menu_save_button
+#菜单按钮ID
+meun : com.android.dialer:id/main_options_menu_button
+#设置
+setting : Settings
+#二级菜单,返回列表
+secondary_meun :
+  - Display options
+  - Sounds and vibration
+  - Quick responses
+  - Calls
+  - Blocked numbers
+  - Voicemail
+  - Accessibility
+  - About
+third_meun:
+  - Name format
+  - Phone ringtone
+  - Edit quick responses
+  - Calling accounts
+  - ADD A NUMBER
+  - Visual voicemail
+  - Build version

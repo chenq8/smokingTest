@@ -14,3 +14,4 @@ if __name__=='__main__':
               r'D:\mytools\SmokingTestCase\allure-results/report '
               r'--clean')
     logging.info('report done')
+

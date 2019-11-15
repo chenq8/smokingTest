@@ -1,5 +1,7 @@
 # 包名
 packagename : 'com.android.contacts'
+#activity
+activity : '.activities.PeopleActivity'
 # 添加按钮ID
 addbt : "com.android.contacts:id/floating_action_button_container"
 # 联系人名称

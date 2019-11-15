@@ -1,7 +1,6 @@
 from page.base import Base
 import logging
-from runlog import testLog
-from page.contact_app import Contact
+
 from time import sleep
 
 
@@ -45,3 +44,11 @@ class Call(Base):
         """通话10秒后挂断电话"""
         sleep(10)
         self.mclick(resourceId=self.call_info['end_call'])
+
+    def click_all_meun(self,s_meun,t_meun):
+        self.mclick(resourceId=self.call_info['meun'])
+        self.mclick(text=self.call_info['setting'])
+        self.mclick(text=s_meun)
+        t = self.findele(text=t_meun).get_text()
+
+        assert t in t_meun

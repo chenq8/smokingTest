@@ -30,6 +30,7 @@ class Base():
     def mapp_start(self, packagename):
         """如果应用正在运行，刚停止后运行，如果未运行，则启动"""
     # try:
+        self.d.press('home')
         if packagename in self.d.app_list_running():
             self.d.app_stop(packagename)
             logging.info('app %s stop all done' % packagename)
@@ -105,7 +106,7 @@ class Base():
             logging.error(e)
 
     def get_data(self,filename):
-        """取得APP中所有操作数据"""
+        """取得APP中配置文件中操作数据"""
         path = os.path.join(os.path.split(os.getcwd())[0],
                             'testdata',
                             filename)

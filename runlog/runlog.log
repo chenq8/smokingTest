@@ -1,55 +1,23 @@
-2019-11-15 11:41:07,819,root,INFO : connect success-----modelName=base.py,funcName=mconnect,codeLine=20 
-2019-11-15 11:41:08,061,root,INFO : app com.android.contacts start done-----modelName=base.py,funcName=mapp_start,codeLine=40 
-2019-11-15 11:41:12,597,root,INFO : Found Element {'description': 'Open navigation drawer'}-----modelName=base.py,funcName=mclick,codeLine=65 
-2019-11-15 11:41:15,929,root,INFO : Found Element {'resourceId': 'com.android.contacts:id/nav_settings'}-----modelName=base.py,funcName=mclick,codeLine=65 
-2019-11-15 11:41:19,377,root,INFO : Found Element {'text': 'My info'}-----modelName=base.py,funcName=mclick,codeLine=65 
-2019-11-15 11:41:19,377,root,INFO : clicked meun My info-----modelName=contact_app.py,funcName=click_all_meun,codeLine=73 
-2019-11-15 11:41:19,567,root,INFO : Thired meun is 123-----modelName=contact_app.py,funcName=click_all_meun,codeLine=83 
-2019-11-15 11:41:20,779,root,INFO : app com.android.contacts start done-----modelName=base.py,funcName=mapp_start,codeLine=40 
-2019-11-15 11:41:25,269,root,INFO : Found Element {'description': 'Open navigation drawer'}-----modelName=base.py,funcName=mclick,codeLine=65 
-2019-11-15 11:41:28,628,root,INFO : Found Element {'resourceId': 'com.android.contacts:id/nav_settings'}-----modelName=base.py,funcName=mclick,codeLine=65 
-2019-11-15 11:41:31,970,root,INFO : Found Element {'text': 'Accounts'}-----modelName=base.py,funcName=mclick,codeLine=65 
-2019-11-15 11:41:31,970,root,INFO : clicked meun Accounts-----modelName=contact_app.py,funcName=click_all_meun,codeLine=73 
-2019-11-15 11:41:33,846,root,INFO : Thired meun is Add account-----modelName=contact_app.py,funcName=click_all_meun,codeLine=83 
-2019-11-15 11:41:35,709,root,INFO : app com.android.contacts start done-----modelName=base.py,funcName=mapp_start,codeLine=40 
-2019-11-15 11:41:40,178,root,INFO : Found Element {'description': 'Open navigation drawer'}-----modelName=base.py,funcName=mclick,codeLine=65 
-2019-11-15 11:41:43,518,root,INFO : Found Element {'resourceId': 'com.android.contacts:id/nav_settings'}-----modelName=base.py,funcName=mclick,codeLine=65 
-2019-11-15 11:41:46,877,root,INFO : Found Element {'text': 'Default account for new contacts'}-----modelName=base.py,funcName=mclick,codeLine=65 
-2019-11-15 11:41:46,877,root,INFO : clicked meun Default account for new contacts-----modelName=contact_app.py,funcName=click_all_meun,codeLine=73 
-2019-11-15 11:41:48,211,root,INFO : Thired meun is Device-----modelName=contact_app.py,funcName=click_all_meun,codeLine=83 
-2019-11-15 11:41:49,879,root,INFO : app com.android.contacts start done-----modelName=base.py,funcName=mapp_start,codeLine=40 
-2019-11-15 11:41:54,368,root,INFO : Found Element {'description': 'Open navigation drawer'}-----modelName=base.py,funcName=mclick,codeLine=65 
-2019-11-15 11:41:57,708,root,INFO : Found Element {'resourceId': 'com.android.contacts:id/nav_settings'}-----modelName=base.py,funcName=mclick,codeLine=65 
-2019-11-15 11:42:01,068,root,INFO : Found Element {'text': 'Contacts to display'}-----modelName=base.py,funcName=mclick,codeLine=65 
-2019-11-15 11:42:01,068,root,INFO : clicked meun Contacts to display-----modelName=contact_app.py,funcName=click_all_meun,codeLine=73 
-2019-11-15 11:42:02,702,root,INFO : Thired meun is All contacts-----modelName=contact_app.py,funcName=click_all_meun,codeLine=83 
-2019-11-15 11:42:04,355,root,INFO : app com.android.contacts start done-----modelName=base.py,funcName=mapp_start,codeLine=40 
-2019-11-15 11:42:08,858,root,INFO : Found Element {'description': 'Open navigation drawer'}-----modelName=base.py,funcName=mclick,codeLine=65 
-2019-11-15 11:42:12,188,root,INFO : Found Element {'resourceId': 'com.android.contacts:id/nav_settings'}-----modelName=base.py,funcName=mclick,codeLine=65 
-2019-11-15 11:42:15,548,root,INFO : Found Element {'text': 'Sort by'}-----modelName=base.py,funcName=mclick,codeLine=65 
-2019-11-15 11:42:15,548,root,INFO : clicked meun Sort by-----modelName=contact_app.py,funcName=click_all_meun,codeLine=73 
-2019-11-15 11:42:16,903,root,INFO : Thired meun is Last name-----modelName=contact_app.py,funcName=click_all_meun,codeLine=83 
-2019-11-15 11:42:18,770,root,INFO : app com.android.contacts start done-----modelName=base.py,funcName=mapp_start,codeLine=40 
-2019-11-15 11:42:23,289,root,INFO : Found Element {'description': 'Open navigation drawer'}-----modelName=base.py,funcName=mclick,codeLine=65 
-2019-11-15 11:42:26,628,root,INFO : Found Element {'resourceId': 'com.android.contacts:id/nav_settings'}-----modelName=base.py,funcName=mclick,codeLine=65 
-2019-11-15 11:42:29,957,root,INFO : Found Element {'text': 'Name format'}-----modelName=base.py,funcName=mclick,codeLine=65 
-2019-11-15 11:42:29,957,root,INFO : clicked meun Name format-----modelName=contact_app.py,funcName=click_all_meun,codeLine=73 
-2019-11-15 11:42:31,320,root,INFO : Thired meun is Last name first-----modelName=contact_app.py,funcName=click_all_meun,codeLine=83 
-2019-11-15 11:42:33,174,root,INFO : app com.android.contacts start done-----modelName=base.py,funcName=mapp_start,codeLine=40 
-2019-11-15 11:42:37,659,root,INFO : Found Element {'description': 'Open navigation drawer'}-----modelName=base.py,funcName=mclick,codeLine=65 
-2019-11-15 11:42:41,007,root,INFO : Found Element {'resourceId': 'com.android.contacts:id/nav_settings'}-----modelName=base.py,funcName=mclick,codeLine=65 
-2019-11-15 11:42:44,368,root,INFO : Found Element {'text': 'Phonetic name'}-----modelName=base.py,funcName=mclick,codeLine=65 
-2019-11-15 11:42:44,368,root,INFO : clicked meun Phonetic name-----modelName=contact_app.py,funcName=click_all_meun,codeLine=73 
-2019-11-15 11:42:45,701,root,INFO : Thired meun is Hide if empty-----modelName=contact_app.py,funcName=click_all_meun,codeLine=83 
-2019-11-15 11:42:47,585,root,INFO : app com.android.contacts start done-----modelName=base.py,funcName=mapp_start,codeLine=40 
-2019-11-15 11:42:52,077,root,INFO : Found Element {'description': 'Open navigation drawer'}-----modelName=base.py,funcName=mclick,codeLine=65 
-2019-11-15 11:42:55,427,root,INFO : Found Element {'resourceId': 'com.android.contacts:id/nav_settings'}-----modelName=base.py,funcName=mclick,codeLine=65 
-2019-11-15 11:42:58,769,root,INFO : Found Element {'text': 'Import'}-----modelName=base.py,funcName=mclick,codeLine=65 
-2019-11-15 11:42:58,769,root,INFO : clicked meun Import-----modelName=contact_app.py,funcName=click_all_meun,codeLine=73 
-2019-11-15 11:43:00,122,root,INFO : Thired meun is SIM card-----modelName=contact_app.py,funcName=click_all_meun,codeLine=83 
-2019-11-15 11:43:01,813,root,INFO : app com.android.contacts start done-----modelName=base.py,funcName=mapp_start,codeLine=40 
-2019-11-15 11:43:06,287,root,INFO : Found Element {'description': 'Open navigation drawer'}-----modelName=base.py,funcName=mclick,codeLine=65 
-2019-11-15 11:43:09,658,root,INFO : Found Element {'resourceId': 'com.android.contacts:id/nav_settings'}-----modelName=base.py,funcName=mclick,codeLine=65 
-2019-11-15 11:43:13,059,root,INFO : Found Element {'text': 'Blocked numbers'}-----modelName=base.py,funcName=mclick,codeLine=65 
-2019-11-15 11:43:13,059,root,INFO : clicked meun Blocked numbers-----modelName=contact_app.py,funcName=click_all_meun,codeLine=73 
-2019-11-15 11:43:35,076,root,INFO : app com.android.contacts start done-----modelName=base.py,funcName=mapp_start,codeLine=40 
+2019-11-15 13:51:04,341,root,INFO : connect success-----modelName=base.py,funcName=mconnect,codeLine=20 
+2019-11-15 13:51:05,738,root,INFO : app com.android.dialer start done-----modelName=base.py,funcName=mapp_start,codeLine=41 
+2019-11-15 13:51:10,368,root,INFO : Found Element {'resourceId': 'com.android.dialer:id/main_options_menu_button'}-----modelName=base.py,funcName=mclick,codeLine=66 
+2019-11-15 13:51:13,698,root,INFO : Found Element {'text': 'Settings'}-----modelName=base.py,funcName=mclick,codeLine=66 
+2019-11-15 13:51:17,028,root,INFO : Found Element {'text': 'Display options'}-----modelName=base.py,funcName=mclick,codeLine=66 
+2019-11-15 13:51:19,027,root,INFO : app com.android.dialer start done-----modelName=base.py,funcName=mapp_start,codeLine=41 
+2019-11-15 13:51:23,521,root,INFO : Found Element {'resourceId': 'com.android.dialer:id/main_options_menu_button'}-----modelName=base.py,funcName=mclick,codeLine=66 
+2019-11-15 13:51:26,854,root,INFO : Found Element {'text': 'Settings'}-----modelName=base.py,funcName=mclick,codeLine=66 
+2019-11-15 13:51:30,190,root,INFO : Found Element {'text': 'Sounds and vibration'}-----modelName=base.py,funcName=mclick,codeLine=66 
+2019-11-15 13:51:31,287,root,INFO : app com.android.dialer start done-----modelName=base.py,funcName=mapp_start,codeLine=41 
+2019-11-15 13:51:35,948,root,INFO : Found Element {'resourceId': 'com.android.dialer:id/main_options_menu_button'}-----modelName=base.py,funcName=mclick,codeLine=66 
+2019-11-15 13:51:39,248,root,INFO : Found Element {'text': 'Settings'}-----modelName=base.py,funcName=mclick,codeLine=66 
+2019-11-15 13:51:42,591,root,INFO : Found Element {'text': 'Quick responses'}-----modelName=base.py,funcName=mclick,codeLine=66 
+2019-11-15 13:51:43,373,root,INFO : app com.android.dialer start done-----modelName=base.py,funcName=mapp_start,codeLine=41 
+2019-11-15 13:52:05,383,root,INFO : app com.android.dialer start done-----modelName=base.py,funcName=mapp_start,codeLine=41 
+2019-11-15 13:52:10,418,root,INFO : Found Element {'resourceId': 'com.android.dialer:id/main_options_menu_button'}-----modelName=base.py,funcName=mclick,codeLine=66 
+2019-11-15 13:52:13,699,root,INFO : Found Element {'text': 'Settings'}-----modelName=base.py,funcName=mclick,codeLine=66 
+2019-11-15 13:52:17,708,root,INFO : Found Element {'text': 'Blocked numbers'}-----modelName=base.py,funcName=mclick,codeLine=66 
+2019-11-15 13:52:18,504,root,INFO : app com.android.dialer start done-----modelName=base.py,funcName=mapp_start,codeLine=41 
+2019-11-15 13:52:29,533,retry.api,WARNING : uiautomator2.GatewayError(gateway error, time used 11.0s), retrying in 3.0 seconds...-----modelName=api.py,funcName=__retry_internal,codeLine=40 
+2019-11-15 13:52:34,710,retry.api,WARNING : uiautomator2.GatewayError(gateway error, time used 2.1s), retrying in 3.5 seconds...-----modelName=api.py,funcName=__retry_internal,codeLine=40 
+2019-11-15 13:52:38,713,retry.api,WARNING : ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response')), retrying in 3.0 seconds...-----modelName=api.py,funcName=__retry_internal,codeLine=40 
+2019-11-15 13:52:41,740,retry.api,WARNING : ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response')), retrying in 3.5 seconds...-----modelName=api.py,funcName=__retry_internal,codeLine=40 

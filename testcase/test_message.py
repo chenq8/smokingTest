@@ -1,25 +1,23 @@
 import pytest
 from runlog import testLog
-from page.call_page import Call
+from page.message_page import Message
 import logging
 
 
-class TestCase_Call():
-    """联系人应用测试类，只可以使用contact类中的方法"""
+class TestCase_Message():
+    """信息应用测试类"""
 
     def setup_class(self):
-        self.tc = Call()
+        self.tc = Message()
         self.tc.mconnect()
 
     def setup(self):
-        self.tc.mapp_start(self.tc.call_info['packagename'])
+        self.tc.mapp_start(self.tc.mesg_info['packagename'])
 
-    def test_make_call(self):
-        self.tc.make_call()
-        self.tc.end_call()
+    def test_new_sms(self):
+        self.tc.new_sms()
 
-
-    data=Call().get_data('call.yaml')
+    data=Message().get_data('call.yaml')
     meun_data = [(x,y) for x,y in
         zip(data['secondary_meun'],data['third_meun'])]
 
@@ -29,7 +27,7 @@ class TestCase_Call():
         self.tc.click_all_meun(s_meun,t_meun)
 
     def teardown(self):
-        self.tc.mapp_stop(self.tc.call_info['packagename'])
+        self.tc.mapp_stop(self.tc.mesg_info['packagename'])
         print('执行完成')
 
 
