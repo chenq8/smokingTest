@@ -31,7 +31,7 @@ class Base():
         """如果应用正在运行，刚停止后运行，如果未运行，则启动"""
     # try:
         if packagename in self.d.app_list_running():
-            self.d.app_stop_all()
+            self.d.app_stop(packagename)
             logging.info('app %s stop all done' % packagename)
             self.d.app_start(packagename)
             logging.info('app %s start done' % packagename)
@@ -50,9 +50,9 @@ class Base():
         """停止应用"""
         self.d.app_stop_all(**kwargs)
 
-    def findelement(self, **kwargs):
+    def findele(self, **kwargs):
         """查找控件"""
-        self.d(**kwargs)
+        return self.d(**kwargs)
 
     def mclick(self,  index=None,**kwargs):
         """点击操作"""

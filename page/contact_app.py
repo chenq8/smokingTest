@@ -62,20 +62,24 @@ class Contact(Base):
         self.mclick(resourceId=self.contact_info['delbt'])
         self.mclick(resourceId=self.contact_info['do_del'])
 
-    def click_all_meun(self):
+    def click_all_meun(self,s_meun,t_meun):
         """遍历一二级菜单
             后续需要优化
             点击菜单-点击设置-点击二级菜单列表-返回-重启APP"""
         #开始遍历
-        for bt in self.contact_info['secondary_meun']:
-            self.click_meun_bt()
-            self.mclick(resourceId=self.contact_info['setting_id'])
-            self.mclick(text=bt)
-            logging.info('clicked meun %s'%bt)
-            if bt is 'My info':
-                self.d.press('back')
-                self.d.press('back')
-            else:
-                self.d.press('back')
-            self.mapp_start(self.contact_info['packagename'])
+        self.click_meun_bt()
+        self.mclick(resourceId=self.contact_info['setting_id'])
+        self.mclick(text=s_meun)
+        logging.info('clicked meun %s'%s_meun)
+        t = self.findele(text=t_meun).get_text()
+        if s_meun is 'My info':
+            self.d.press('back')
+            self.d.press('back')
+        elif s_meun is 'Blocked numbers':
+            # self.mclick(className=self.contact_info['block_number'])
+            self.mapp_stop('com.android.server.telecom')
+        else:
+            self.d.press('back')
+        logging.info('Thired meun is %s' % t)
+        assert t in t_meun
 

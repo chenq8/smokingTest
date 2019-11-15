@@ -28,6 +28,8 @@ do_del : 'android:id/button1'
 meun : "Open navigation drawer"
 #设置菜单
 setting_id: 'com.android.contacts:id/nav_settings'
+#Blocked numbers菜单返回
+block_number: 'android.widget.ImageButton'
 #二级菜单,返回列表
 secondary_meun :
   -   'My info'
@@ -40,3 +42,16 @@ secondary_meun :
   -   'Import'
   -   'Blocked numbers'
   -   'About Contacts'
+#点击二级菜单的弹出显示，用于验证
+third_meun:
+  -  '123'
+  -  'Add account'
+  -  'Device'
+  -  'All contacts'
+  -  'Last name'
+  -  'Last name first'
+  -  'Hide if empty'
+  -  'SIM card'
+  -  'Share all contacts'
+  -  'ADD A NUMBER'
+  -  'Build version'
