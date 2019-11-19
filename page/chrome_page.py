@@ -12,16 +12,16 @@ class Chrome(Base):
 
     def skip_welcome(self):
         """跳过欢迎界面，点击允许和跳过登录"""
-        self.mclick(resourceId=self.chrome_info['accept'])
-        self.mclick(resourceId=self.chrome_info['no_login'])
+        if self.ele_exists(resourceId=self.chrome_info['accept']):
+            self.mclick(resourceId=self.chrome_info['accept'])
+            self.mclick(resourceId=self.chrome_info['no_login'])
 
     def input_url(self,url):
         """打开百度
         如果有欢迎页，刚跳过，点击地址栏，输入网址"""
-        if self.ele_exists(resourceId=self.chrome_info['accept']):
-            self.skip_welcome()
+        self.skip_welcome()
         if self.findele(resourceId=self.chrome_info['input_url']).exists:
-            self.mclick(url,resourceId=self.chrome_info['input_url'])
+            self.mclick(resourceId=self.chrome_info['input_url'])
             self.minput(url,resourceId=self.chrome_info['top_url'])
         else:
             self.minput(url,resourceId=self.chrome_info['top_url'])

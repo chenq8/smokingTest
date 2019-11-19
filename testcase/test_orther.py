@@ -1,12 +1,20 @@
-import pytest
+import uiautomator2 as u2
+import time
 
-from page.base import Base
+from runlog.testLog import startLog
 
-
-@pytest.mark.parametrize('s_meun,t_meun',
-                         Base().get_meun_data('call.yaml'))
-def test_1(s_meun,t_meun):
-    print(s_meun,t_meun)
-
-path = r'D:\mytools\SmokingTestCase\testcase\test_orther.py'
-pytest.main(['-s',path])
+startLog()
+d = u2.connect()
+# r = d.shell('logcat -v time > d:log.log')
+# time.sleep(5)
+# r.close()
+r = d.shell("logcat", stream=True)
+# r: requests.models.Response
+deadline = time.time() + 10 # run maxium 10s
+try:
+    for line in r.iter_lines(): # r.iter_lines(chunk_size=512, decode_unicode=None, delimiter=None)
+        if time.time() > deadline:
+            break
+        print("Read:", line.decode('utf-8'))
+finally:
+    r.close()

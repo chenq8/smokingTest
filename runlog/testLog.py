@@ -9,7 +9,7 @@ def startLog():
     file = logging.FileHandler(filename, 'w+')
 
     # 配置Log
-    logging.basicConfig(level=logging.DEBUG, handlers=[pr, file],
+    logging.basicConfig(level=logging.INFO, handlers=[pr, file],
                         format="%(asctime)s,%(name)s,%(levelname)s : %(message)s"
                                "-----modelName=%(filename)s,funcName=%(funcName)s,codeLine=%(lineno)s ",
                         )

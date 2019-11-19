@@ -12,6 +12,10 @@ class Base():
     def __init__(self):
         self.d = None
 
+    def record(self):
+        return self.d.shell('screenrecord /sdcard/aaa.mp4')
+
+
     def mconnect(self, *args):
         """连接服务"""
 
@@ -82,8 +86,8 @@ class Base():
                 self.d(**kwargs).click()
                 logging.info('clicked Element %s' % kwargs)
         except Exception as e:
-            logging.error('Not Found Element %s' % kwargs)
             logging.error(e)
+            logging.error('Not Found Element %s' % kwargs)
             self.mscreenshot()
 
     def mlong_click(self, index=None, **kwargs):

@@ -3,6 +3,7 @@ import pytest
 from page.base import Base
 from runlog import testLog
 from page.chrome_page import Chrome
+import logging
 
 
 class TestCase_Chrome():
@@ -13,11 +14,12 @@ class TestCase_Chrome():
         self.tc.mconnect()
 
     def setup(self):
+        # self.record = self.tc.record()
         # self.tc.mapp_start(self.tc.chrome_info['packagename'])
         self.tc.start_chrome()
 
     def test_open_baidu(self):
-        self.tc.input_url('www.baidu.com')
+        self.tc.input_url("www.baidu.com")
         assert '百度一下' in self.tc.get_baidu_text()
 
     @pytest.mark.parametrize('s_meun,t_meun',
@@ -33,11 +35,12 @@ class TestCase_Chrome():
 
     def teardown(self):
         self.tc.mapp_stop(self.tc.chrome_info['packagename'])
-        print('test done')
+        # self.record.close()
+        logging.info('test done')
 
 
 if __name__ == "__main__":
     testLog.startLog()
     pytest.main([r'D:\mytools\SmokingTestCase\testcase\test_chrome.py'
-                 r'::TestCase_Chrome::test_meun',
+                 r'::TestCase_Chrome::test_open_baidu',
                  ])
