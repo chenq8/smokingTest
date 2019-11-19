@@ -1,4 +1,6 @@
 import pytest
+
+from page.base import Base
 from runlog import testLog
 from page.contact_page import Contact
 import logging
@@ -12,38 +14,51 @@ class TestCase_contact():
         self.d = self.tc.mconnect()
 
     def setup(self):
-        self.tc.mapp_start(self.tc.contact_info['packagename'],
-                           self.tc.contact_info['activity'])
+        self.tc.mapp_start(self.tc.contact_info['packagename'])
 
     def test_new_contact(self):
-        """测试新建联系人"""
-        tc = self.tc
-        tc.new_contact()
-        # savednumber = tc.get_Verify_text()
-        # logging.info('savednumber is %s ' % savednumber)
-        # assert '10086' in savednumber
+        """测试新建联系人
+        点击添加按钮-输入信息-点击保存"""
+        self.tc.click_add_bt()
+        self.tc.input_contact_mesg()
+        self.tc.save_contact()
 
     def test_del_contact(self):
-        """测试删除联系人"""
+        """测试删除联系人
+        如果无联系人，则新建后再删除"""
         tc = self.tc
         if tc.contact_isempty():
             tc.new_contact()
-            tc.del_contact()
+            tc.longclick_frist_contact()
+            tc.do_del()
         else:
-            tc.del_contact()
+            tc.longclick_frist_contact()
+            tc.do_del()
 
-    data = Contact().get_data('contact.yaml')
-    meun_data = [(x, y) for x, y in
-                 zip(data['secondary_meun'], data['third_meun'])]
-
-    @pytest.mark.parametrize('s_meun,t_meun', meun_data)
+    @pytest.mark.parametrize('s_meun,t_meun',
+                             Base().get_meun_data('contact.yaml'))
     def test_meun(self, s_meun, t_meun):
-        """测试遍历菜单"""
-        self.tc.click_all_meun(s_meun, t_meun)
+        """遍历一二级菜单
+               后续需要优化
+               点击菜单-点击设置-点击二级菜单列表-返回-重启APP"""
+        # 开始遍历
+        self.tc.click_meun_bt()
+        self.tc.click_setting()
+        self.tc.mclick(text=s_meun)
+        t = self.tc.findele(text=t_meun).get_text()
+        if s_meun is 'My info':
+            self.tc.mclick_back()
+            self.tc.mclick_back()
+        elif s_meun is 'Blocked numbers':
+            # self.mclick(className=self.contact_info['block_number'])
+            self.tc.mapp_stop('com.android.server.telecom')
+        else:
+            self.tc.mclick_back()
+        assert t in t_meun
 
     def teardown(self):
         self.tc.mapp_stop(self.tc.contact_info['packagename'])
-        print('执行完成')
+        logging.info('run done')
 
 
 if __name__ == "__main__":

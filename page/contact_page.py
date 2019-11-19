@@ -48,38 +48,19 @@ class Contact(Base):
         """判断是否有联系人"""
         return self.d(text=self.contact_info['emptytext']).exists
 
+    def do_del(self):
+        """删除操作
+        点击删除按钮-确认删除"""
+        self.mclick(resourceId=self.contact_info['delbt'])
+        self.mclick(resourceId=self.contact_info['do_del'])
+
     def new_contact(self):
         """新建联系人
         点击添加按钮-输入信息-点击保存"""
         self.click_add_bt()
         self.input_contact_mesg()
         self.save_contact()
+        self.mclick_back()
 
-    def del_contact(self):
-        """删除联系人
-        长按联系人-点击删除按钮-确认删除"""
-        self.longclick_frist_contact()
-        self.mclick(resourceId=self.contact_info['delbt'])
-        self.mclick(resourceId=self.contact_info['do_del'])
-
-    def click_all_meun(self,s_meun,t_meun):
-        """遍历一二级菜单
-            后续需要优化
-            点击菜单-点击设置-点击二级菜单列表-返回-重启APP"""
-        #开始遍历
-        self.click_meun_bt()
+    def click_setting(self):
         self.mclick(resourceId=self.contact_info['setting_id'])
-        self.mclick(text=s_meun)
-        logging.info('clicked meun %s'%s_meun)
-        t = self.findele(text=t_meun).get_text()
-        if s_meun is 'My info':
-            self.d.press('back')
-            self.d.press('back')
-        elif s_meun is 'Blocked numbers':
-            # self.mclick(className=self.contact_info['block_number'])
-            self.mapp_stop('com.android.server.telecom')
-        else:
-            self.d.press('back')
-        logging.info('Thired meun is %s' % t)
-        assert t in t_meun
-

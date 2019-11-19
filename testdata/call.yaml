@@ -9,7 +9,7 @@ contact_list: com.android.dialer:id/click_target
 #联系人卡片内拨号ID
 call_bt: com.android.contacts:id/communication_card
 #通话计时器ID
-call_time: com.android.dialer:id/contactgrid_bottom_text_switcher
+call_time: com.android.dialer:id/contactgrid_bottom_timer
 #挂断
 end_call: com.android.dialer:id/incall_end_call
 #首个联系人创建

@@ -2,7 +2,7 @@
 packagename: com.google.android.apps.messaging
 #新建会话
 new_chat: com.google.android.apps.messaging:id/start_new_conversation_button
-#号码输入框
+#号码输入框className
 number_in: android.widget.ScrollView
 #号码
 number: 10010
@@ -22,4 +22,31 @@ takept: com.google.android.apps.messaging:id/camera_capture_button
 takevideo: com.google.android.apps.messaging:id/camera_record_video_button
 #镜头切换按钮
 change: com.google.android.apps.messaging:id/camera_swapCamera_button
-
+#信息列表ID
+mesg_list: com.google.android.apps.messaging:id/swipeableContainer
+#会话列表内容ID
+session_list: com.google.android.apps.messaging:id/message_text
+#选项列表description
+option_list: More options
+#转发按钮id,index=1
+forward_bt: com.google.android.apps.messaging:id/title
+#转为新信息id
+for_new: android:id/button1
+#设置菜单
+setting: Settings
+#二级菜单
+secondary_meun:
+  - Default SMS app
+  - Notifications
+  - Hear outgoing message sounds
+  - Your current country
+  - Automatic link previews
+  - Advanced
+  - About,terms&privacy
+third_meun:
+  - Messages
+  - Pop on screen
+  - Cancel
+  - Learn more
+  - Service messages
+  - Version info

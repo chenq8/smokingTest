@@ -1,12 +1,12 @@
 import pytest
+
+from page.base import Base
 from runlog import testLog
 from page.call_page import Call
-import logging
 
 
 class TestCase_Call():
     """联系人应用测试类，只可以使用contact类中的方法"""
-
     def setup_class(self):
         self.tc = Call()
         self.tc.mconnect()
@@ -15,18 +15,24 @@ class TestCase_Call():
         self.tc.mapp_start(self.tc.call_info['packagename'])
 
     def test_make_call(self):
-        self.tc.make_call()
+        """拨打电话"""
+        if self.tc.contact_notexsits():
+            self.tc.create_contact()
+            self.tc.click_call_bt()
+        else:
+            self.tc.click_contact()
+            self.tc.click_call_bt()
         self.tc.end_call()
 
-
-    data=Call().get_data('call.yaml')
-    meun_data = [(x,y) for x,y in
-        zip(data['secondary_meun'],data['third_meun'])]
-
-    @pytest.mark.parametrize('s_meun,t_meun',meun_data)
+    @pytest.mark.parametrize('s_meun,t_meun',
+                             Base().get_meun_data('call.yaml'))
     def test_meun(self,s_meun,t_meun):
         """测试遍历菜单"""
-        self.tc.click_all_meun(s_meun,t_meun)
+        self.tc.click_meun()
+        self.tc.click_setting()
+        self.tc.mclick(text=s_meun)
+        t = self.tc.get_ele_text(t_meun)
+        assert t in t_meun
 
     def teardown(self):
         self.tc.mapp_stop(self.tc.call_info['packagename'])
@@ -35,4 +41,5 @@ class TestCase_Call():
 
 if __name__ == "__main__":
     testLog.startLog()
-    pytest.main([r'D:\mytools\SmokingTestCase\testcase\test_call.py::TestCase_Call::test_meun'])
+    pytest.main([r'D:\mytools\SmokingTestCase\testcase\test_call.py::TestCase_Call::test_meun',
+                 ])

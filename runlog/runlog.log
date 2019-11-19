@@ -1,23 +1,315 @@
-2019-11-15 13:51:04,341,root,INFO : connect success-----modelName=base.py,funcName=mconnect,codeLine=20 
-2019-11-15 13:51:05,738,root,INFO : app com.android.dialer start done-----modelName=base.py,funcName=mapp_start,codeLine=41 
-2019-11-15 13:51:10,368,root,INFO : Found Element {'resourceId': 'com.android.dialer:id/main_options_menu_button'}-----modelName=base.py,funcName=mclick,codeLine=66 
-2019-11-15 13:51:13,698,root,INFO : Found Element {'text': 'Settings'}-----modelName=base.py,funcName=mclick,codeLine=66 
-2019-11-15 13:51:17,028,root,INFO : Found Element {'text': 'Display options'}-----modelName=base.py,funcName=mclick,codeLine=66 
-2019-11-15 13:51:19,027,root,INFO : app com.android.dialer start done-----modelName=base.py,funcName=mapp_start,codeLine=41 
-2019-11-15 13:51:23,521,root,INFO : Found Element {'resourceId': 'com.android.dialer:id/main_options_menu_button'}-----modelName=base.py,funcName=mclick,codeLine=66 
-2019-11-15 13:51:26,854,root,INFO : Found Element {'text': 'Settings'}-----modelName=base.py,funcName=mclick,codeLine=66 
-2019-11-15 13:51:30,190,root,INFO : Found Element {'text': 'Sounds and vibration'}-----modelName=base.py,funcName=mclick,codeLine=66 
-2019-11-15 13:51:31,287,root,INFO : app com.android.dialer start done-----modelName=base.py,funcName=mapp_start,codeLine=41 
-2019-11-15 13:51:35,948,root,INFO : Found Element {'resourceId': 'com.android.dialer:id/main_options_menu_button'}-----modelName=base.py,funcName=mclick,codeLine=66 
-2019-11-15 13:51:39,248,root,INFO : Found Element {'text': 'Settings'}-----modelName=base.py,funcName=mclick,codeLine=66 
-2019-11-15 13:51:42,591,root,INFO : Found Element {'text': 'Quick responses'}-----modelName=base.py,funcName=mclick,codeLine=66 
-2019-11-15 13:51:43,373,root,INFO : app com.android.dialer start done-----modelName=base.py,funcName=mapp_start,codeLine=41 
-2019-11-15 13:52:05,383,root,INFO : app com.android.dialer start done-----modelName=base.py,funcName=mapp_start,codeLine=41 
-2019-11-15 13:52:10,418,root,INFO : Found Element {'resourceId': 'com.android.dialer:id/main_options_menu_button'}-----modelName=base.py,funcName=mclick,codeLine=66 
-2019-11-15 13:52:13,699,root,INFO : Found Element {'text': 'Settings'}-----modelName=base.py,funcName=mclick,codeLine=66 
-2019-11-15 13:52:17,708,root,INFO : Found Element {'text': 'Blocked numbers'}-----modelName=base.py,funcName=mclick,codeLine=66 
-2019-11-15 13:52:18,504,root,INFO : app com.android.dialer start done-----modelName=base.py,funcName=mapp_start,codeLine=41 
-2019-11-15 13:52:29,533,retry.api,WARNING : uiautomator2.GatewayError(gateway error, time used 11.0s), retrying in 3.0 seconds...-----modelName=api.py,funcName=__retry_internal,codeLine=40 
-2019-11-15 13:52:34,710,retry.api,WARNING : uiautomator2.GatewayError(gateway error, time used 2.1s), retrying in 3.5 seconds...-----modelName=api.py,funcName=__retry_internal,codeLine=40 
-2019-11-15 13:52:38,713,retry.api,WARNING : ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response')), retrying in 3.0 seconds...-----modelName=api.py,funcName=__retry_internal,codeLine=40 
-2019-11-15 13:52:41,740,retry.api,WARNING : ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response')), retrying in 3.5 seconds...-----modelName=api.py,funcName=__retry_internal,codeLine=40 
+2019-11-19 10:26:42,390,urllib3.connectionpool,DEBUG : Starting new HTTP connection (1): 127.0.0.1:65126-----modelName=connectionpool.py,funcName=_new_conn,codeLine=225 
+2019-11-19 10:26:42,394,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "GET /version HTTP/1.1" 200 5-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:26:42,421,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 249-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:26:42,439,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /shell HTTP/1.1" 200 120-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:26:42,439,root,INFO : connect success-----modelName=base.py,funcName=mconnect,codeLine=22 
+2019-11-19 10:26:42,705,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 71-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:26:43,734,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 71-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:26:43,904,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 502-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:26:44,085,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 71-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:26:47,087,root,INFO : clicked Element {'text': 'Chrome'}-----modelName=base.py,funcName=mclick,codeLine=83 
+2019-11-19 10:26:47,135,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 71-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:26:47,275,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 473-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:26:48,065,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 71-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:26:51,067,root,INFO : clicked Element {'resourceId': 'com.android.chrome:id/menu_button_wrapper'}-----modelName=base.py,funcName=mclick,codeLine=83 
+2019-11-19 10:26:51,077,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 71-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:26:51,194,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 492-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:26:51,364,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 71-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:26:54,366,root,INFO : clicked Element {'text': 'Settings'}-----modelName=base.py,funcName=mclick,codeLine=83 
+2019-11-19 10:26:54,963,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 71-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:26:55,205,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 71-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:26:55,465,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 481-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:26:55,654,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 71-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:26:58,656,root,INFO : clicked Element {'text': 'Search engine'}-----modelName=base.py,funcName=mclick,codeLine=83 
+2019-11-19 10:26:58,684,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 71-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:26:58,745,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 73-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:27:00,344,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 72-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:27:00,394,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /shell HTTP/1.1" 200 39-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:27:01,782,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 72-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:27:01,839,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 71-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:27:01,964,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 502-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:27:02,156,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 71-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:27:05,159,root,INFO : clicked Element {'text': 'Chrome'}-----modelName=base.py,funcName=mclick,codeLine=83 
+2019-11-19 10:27:05,230,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 71-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:27:05,373,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 473-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:27:05,795,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 71-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:27:08,797,root,INFO : clicked Element {'resourceId': 'com.android.chrome:id/menu_button_wrapper'}-----modelName=base.py,funcName=mclick,codeLine=83 
+2019-11-19 10:27:08,806,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 71-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:27:08,928,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 492-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:27:09,135,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 71-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:27:12,136,root,INFO : clicked Element {'text': 'Settings'}-----modelName=base.py,funcName=mclick,codeLine=83 
+2019-11-19 10:27:12,767,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 71-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:27:12,954,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 71-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:27:13,234,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 477-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:27:13,426,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 71-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:27:16,427,root,INFO : clicked Element {'text': 'Passwords'}-----modelName=base.py,funcName=mclick,codeLine=83 
+2019-11-19 10:27:16,436,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 71-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:27:16,494,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 83-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:27:18,068,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 72-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:27:18,134,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /shell HTTP/1.1" 200 39-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:27:19,534,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 72-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:27:19,594,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 71-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:27:19,724,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 502-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:27:19,916,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 71-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:27:22,917,root,INFO : clicked Element {'text': 'Chrome'}-----modelName=base.py,funcName=mclick,codeLine=83 
+2019-11-19 10:27:23,014,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 71-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:27:23,158,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 473-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:27:23,363,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 71-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:27:26,365,root,INFO : clicked Element {'resourceId': 'com.android.chrome:id/menu_button_wrapper'}-----modelName=base.py,funcName=mclick,codeLine=83 
+2019-11-19 10:27:26,374,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 71-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:27:26,496,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 492-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:27:26,696,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 71-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:27:29,697,root,INFO : clicked Element {'text': 'Settings'}-----modelName=base.py,funcName=mclick,codeLine=83 
+2019-11-19 10:27:30,318,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 71-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:27:30,534,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 71-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:27:30,784,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 483-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:27:30,963,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 71-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:27:33,966,root,INFO : clicked Element {'text': 'Payment methods'}-----modelName=base.py,funcName=mclick,codeLine=83 
+2019-11-19 10:27:33,974,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 71-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:27:34,025,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 77-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:27:35,644,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 72-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:27:35,732,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /shell HTTP/1.1" 200 39-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:27:37,273,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 72-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:27:37,333,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 71-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:27:37,457,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 502-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:27:37,643,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 71-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:27:40,644,root,INFO : clicked Element {'text': 'Chrome'}-----modelName=base.py,funcName=mclick,codeLine=83 
+2019-11-19 10:27:40,712,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 71-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:27:40,857,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 473-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:27:41,295,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 71-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:27:44,296,root,INFO : clicked Element {'resourceId': 'com.android.chrome:id/menu_button_wrapper'}-----modelName=base.py,funcName=mclick,codeLine=83 
+2019-11-19 10:27:44,310,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 71-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:27:44,434,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 492-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:27:44,644,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 71-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:27:47,646,root,INFO : clicked Element {'text': 'Settings'}-----modelName=base.py,funcName=mclick,codeLine=83 
+2019-11-19 10:27:48,265,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 71-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:27:48,484,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 71-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:27:48,734,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 486-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:27:48,938,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 71-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:27:51,940,root,INFO : clicked Element {'text': 'Addresses and more'}-----modelName=base.py,funcName=mclick,codeLine=83 
+2019-11-19 10:27:51,967,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 71-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:27:52,023,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 80-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:27:53,647,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 72-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:27:53,692,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /shell HTTP/1.1" 200 39-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:27:55,081,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 72-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:27:55,148,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 71-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:27:55,294,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 502-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:27:55,487,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 71-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:27:58,489,root,INFO : clicked Element {'text': 'Chrome'}-----modelName=base.py,funcName=mclick,codeLine=83 
+2019-11-19 10:27:58,557,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 71-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:27:58,696,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 473-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:27:59,157,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 71-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:28:02,158,root,INFO : clicked Element {'resourceId': 'com.android.chrome:id/menu_button_wrapper'}-----modelName=base.py,funcName=mclick,codeLine=83 
+2019-11-19 10:28:02,182,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 71-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:28:02,298,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 492-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:28:02,495,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 71-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:28:05,497,root,INFO : clicked Element {'text': 'Settings'}-----modelName=base.py,funcName=mclick,codeLine=83 
+2019-11-19 10:28:06,126,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 71-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:28:06,334,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 71-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:28:06,605,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 481-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:28:06,797,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 71-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:28:09,799,root,INFO : clicked Element {'text': 'Notifications'}-----modelName=base.py,funcName=mclick,codeLine=83 
+2019-11-19 10:28:09,829,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 71-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:28:09,897,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 87-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:28:11,504,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 72-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:28:11,564,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /shell HTTP/1.1" 200 39-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:28:13,160,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 72-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:28:13,219,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 71-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:28:13,343,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 502-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:28:13,525,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 71-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:28:16,528,root,INFO : clicked Element {'text': 'Chrome'}-----modelName=base.py,funcName=mclick,codeLine=83 
+2019-11-19 10:28:16,606,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 71-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:28:16,755,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 473-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:28:17,174,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 71-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:28:20,175,root,INFO : clicked Element {'resourceId': 'com.android.chrome:id/menu_button_wrapper'}-----modelName=base.py,funcName=mclick,codeLine=83 
+2019-11-19 10:28:20,184,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 71-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:28:20,295,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 492-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:28:20,494,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 71-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:28:23,495,root,INFO : clicked Element {'text': 'Settings'}-----modelName=base.py,funcName=mclick,codeLine=83 
+2019-11-19 10:28:24,133,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 71-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:28:24,345,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 71-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:28:24,614,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 479-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:28:24,841,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 71-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:28:27,842,root,INFO : clicked Element {'text': 'Privacy'}-----modelName=base.py,funcName=mclick,codeLine=83 
+2019-11-19 10:28:49,109,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 72-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:28:49,188,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /shell HTTP/1.1" 200 39-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:28:50,614,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 72-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:28:50,689,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 71-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:28:50,845,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 502-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:28:51,056,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 71-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:28:54,058,root,INFO : clicked Element {'text': 'Chrome'}-----modelName=base.py,funcName=mclick,codeLine=83 
+2019-11-19 10:28:54,108,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 71-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:28:54,274,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 473-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:28:54,687,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 71-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:28:57,690,root,INFO : clicked Element {'resourceId': 'com.android.chrome:id/menu_button_wrapper'}-----modelName=base.py,funcName=mclick,codeLine=83 
+2019-11-19 10:28:57,699,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 71-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:28:57,814,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 492-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:28:58,006,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 71-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:29:01,008,root,INFO : clicked Element {'text': 'Settings'}-----modelName=base.py,funcName=mclick,codeLine=83 
+2019-11-19 10:29:01,642,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 71-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:29:01,847,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 71-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:29:02,124,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 485-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:29:02,305,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 71-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:29:05,306,root,INFO : clicked Element {'text': 'Accessibility'}-----modelName=base.py,funcName=mclick,codeLine=83 
+2019-11-19 10:29:05,314,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 71-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:29:05,368,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 81-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:29:06,965,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 72-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:29:07,037,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /shell HTTP/1.1" 200 39-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:29:08,590,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 72-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:29:08,645,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 71-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:29:08,774,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 502-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:29:08,974,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 71-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:29:11,975,root,INFO : clicked Element {'text': 'Chrome'}-----modelName=base.py,funcName=mclick,codeLine=83 
+2019-11-19 10:29:12,035,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 71-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:29:12,184,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 473-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:29:12,886,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 71-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:29:15,887,root,INFO : clicked Element {'resourceId': 'com.android.chrome:id/menu_button_wrapper'}-----modelName=base.py,funcName=mclick,codeLine=83 
+2019-11-19 10:29:37,151,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 72-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:29:37,151,root,ERROR : Not Found Element {'text': 'Settings'}-----modelName=base.py,funcName=mclick,codeLine=85 
+2019-11-19 10:29:37,151,root,ERROR : -32002 Client error: <> data: , method: None-----modelName=base.py,funcName=mclick,codeLine=86 
+2019-11-19 10:29:37,152,urllib3.connectionpool,DEBUG : Starting new HTTP connection (1): 127.0.0.1:65126-----modelName=connectionpool.py,funcName=_new_conn,codeLine=225 
+2019-11-19 10:29:37,426,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "GET /screenshot/0 HTTP/1.1" 200 134706-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:29:37,428,root,INFO : screenshot success-----modelName=base.py,funcName=mscreenshot,codeLine=126 
+2019-11-19 10:29:48,558,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 247-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:29:48,692,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /shell HTTP/1.1" 200 39-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:29:50,057,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 72-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:29:50,128,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 71-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:29:50,264,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 502-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:29:50,444,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 71-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:29:53,446,root,INFO : clicked Element {'text': 'Chrome'}-----modelName=base.py,funcName=mclick,codeLine=83 
+2019-11-19 10:29:53,516,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 71-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:29:53,655,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 473-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:29:53,845,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 71-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:29:56,846,root,INFO : clicked Element {'resourceId': 'com.android.chrome:id/menu_button_wrapper'}-----modelName=base.py,funcName=mclick,codeLine=83 
+2019-11-19 10:29:56,854,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 71-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:29:56,978,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 492-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:29:57,181,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 71-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:30:00,182,root,INFO : clicked Element {'text': 'Settings'}-----modelName=base.py,funcName=mclick,codeLine=83 
+2019-11-19 10:30:00,782,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 71-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:30:01,028,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 71-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:30:01,274,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 481-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:30:01,475,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 71-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:30:04,477,root,INFO : clicked Element {'text': 'Languages'}-----modelName=base.py,funcName=mclick,codeLine=83 
+2019-11-19 10:30:04,501,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 71-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:30:04,558,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 81-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:30:06,148,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 72-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:30:06,199,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /shell HTTP/1.1" 200 39-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:30:07,789,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 72-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:30:07,845,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 71-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:30:07,974,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 502-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:30:08,165,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 71-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:30:11,168,root,INFO : clicked Element {'text': 'Chrome'}-----modelName=base.py,funcName=mclick,codeLine=83 
+2019-11-19 10:30:11,241,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 71-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:30:11,397,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 473-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:30:11,634,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 71-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:30:14,635,root,INFO : clicked Element {'resourceId': 'com.android.chrome:id/menu_button_wrapper'}-----modelName=base.py,funcName=mclick,codeLine=83 
+2019-11-19 10:30:14,645,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 71-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:30:14,785,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 492-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:30:14,956,urllib3.connectionpool,DEBUG : http://127.0.0.1:65126 "POST /jsonrpc/0 HTTP/1.1" 200 71-----modelName=connectionpool.py,funcName=_make_request,codeLine=437 
+2019-11-19 10:30:17,958,root,INFO : clicked Element {'text': 'Settings'}-----modelName=base.py,funcName=mclick,codeLine=83 
+2019-11-19 10:30:17,959,urllib3.connectionpool,DEBUG : Resetting dropped connection: 127.0.0.1-----modelName=connectionpool.py,funcName=_get_conn,codeLine=266 
+2019-11-19 10:30:19,973,urllib3.util.retry,DEBUG : Incremented Retry for (url='/jsonrpc/0'): Retry(total=2, connect=2, read=None, redirect=None, status=None)-----modelName=retry.py,funcName=increment,codeLine=438 
+2019-11-19 10:30:19,973,urllib3.connectionpool,WARNING : Retrying (Retry(total=2, connect=2, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DFCCA1A448>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。')': /jsonrpc/0-----modelName=connectionpool.py,funcName=urlopen,codeLine=748 
+2019-11-19 10:30:19,973,urllib3.connectionpool,DEBUG : Starting new HTTP connection (2): 127.0.0.1:65126-----modelName=connectionpool.py,funcName=_new_conn,codeLine=225 
+2019-11-19 10:30:21,985,urllib3.util.retry,DEBUG : Incremented Retry for (url='/jsonrpc/0'): Retry(total=1, connect=1, read=None, redirect=None, status=None)-----modelName=retry.py,funcName=increment,codeLine=438 
+2019-11-19 10:30:22,986,urllib3.connectionpool,WARNING : Retrying (Retry(total=1, connect=1, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DFCCB8CEC8>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。')': /jsonrpc/0-----modelName=connectionpool.py,funcName=urlopen,codeLine=748 
+2019-11-19 10:30:22,986,urllib3.connectionpool,DEBUG : Starting new HTTP connection (3): 127.0.0.1:65126-----modelName=connectionpool.py,funcName=_new_conn,codeLine=225 
+2019-11-19 10:30:25,000,urllib3.util.retry,DEBUG : Incremented Retry for (url='/jsonrpc/0'): Retry(total=0, connect=0, read=None, redirect=None, status=None)-----modelName=retry.py,funcName=increment,codeLine=438 
+2019-11-19 10:30:27,000,urllib3.connectionpool,WARNING : Retrying (Retry(total=0, connect=0, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DFCCBF5D88>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。')': /jsonrpc/0-----modelName=connectionpool.py,funcName=urlopen,codeLine=748 
+2019-11-19 10:30:27,000,urllib3.connectionpool,DEBUG : Starting new HTTP connection (4): 127.0.0.1:65126-----modelName=connectionpool.py,funcName=_new_conn,codeLine=225 
+2019-11-19 10:30:29,014,retry.api,WARNING : HTTPConnectionPool(host='127.0.0.1', port=65126): Max retries exceeded with url: /jsonrpc/0 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DFCD463748>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。')), retrying in 3.0 seconds...-----modelName=api.py,funcName=__retry_internal,codeLine=40 
+2019-11-19 10:30:32,014,urllib3.connectionpool,DEBUG : Starting new HTTP connection (5): 127.0.0.1:65126-----modelName=connectionpool.py,funcName=_new_conn,codeLine=225 
+2019-11-19 10:30:34,029,urllib3.util.retry,DEBUG : Incremented Retry for (url='/jsonrpc/0'): Retry(total=2, connect=2, read=None, redirect=None, status=None)-----modelName=retry.py,funcName=increment,codeLine=438 
+2019-11-19 10:30:34,029,urllib3.connectionpool,WARNING : Retrying (Retry(total=2, connect=2, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DFCCB5B848>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。')': /jsonrpc/0-----modelName=connectionpool.py,funcName=urlopen,codeLine=748 
+2019-11-19 10:30:34,029,urllib3.connectionpool,DEBUG : Starting new HTTP connection (6): 127.0.0.1:65126-----modelName=connectionpool.py,funcName=_new_conn,codeLine=225 
+2019-11-19 10:30:36,031,urllib3.util.retry,DEBUG : Incremented Retry for (url='/jsonrpc/0'): Retry(total=1, connect=1, read=None, redirect=None, status=None)-----modelName=retry.py,funcName=increment,codeLine=438 
+2019-11-19 10:30:37,031,urllib3.connectionpool,WARNING : Retrying (Retry(total=1, connect=1, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DFCCB88FC8>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。')': /jsonrpc/0-----modelName=connectionpool.py,funcName=urlopen,codeLine=748 
+2019-11-19 10:30:37,032,urllib3.connectionpool,DEBUG : Starting new HTTP connection (7): 127.0.0.1:65126-----modelName=connectionpool.py,funcName=_new_conn,codeLine=225 
+2019-11-19 10:30:39,046,urllib3.util.retry,DEBUG : Incremented Retry for (url='/jsonrpc/0'): Retry(total=0, connect=0, read=None, redirect=None, status=None)-----modelName=retry.py,funcName=increment,codeLine=438 
+2019-11-19 10:30:41,046,urllib3.connectionpool,WARNING : Retrying (Retry(total=0, connect=0, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DFCCB89C08>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。')': /jsonrpc/0-----modelName=connectionpool.py,funcName=urlopen,codeLine=748 
+2019-11-19 10:30:41,047,urllib3.connectionpool,DEBUG : Starting new HTTP connection (8): 127.0.0.1:65126-----modelName=connectionpool.py,funcName=_new_conn,codeLine=225 
+2019-11-19 10:30:43,050,retry.api,WARNING : HTTPConnectionPool(host='127.0.0.1', port=65126): Max retries exceeded with url: /jsonrpc/0 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DFCCB8EAC8>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。')), retrying in 3.5 seconds...-----modelName=api.py,funcName=__retry_internal,codeLine=40 
+2019-11-19 10:30:46,551,urllib3.connectionpool,DEBUG : Starting new HTTP connection (9): 127.0.0.1:65126-----modelName=connectionpool.py,funcName=_new_conn,codeLine=225 
+2019-11-19 10:30:48,565,urllib3.util.retry,DEBUG : Incremented Retry for (url='/jsonrpc/0'): Retry(total=2, connect=2, read=None, redirect=None, status=None)-----modelName=retry.py,funcName=increment,codeLine=438 
+2019-11-19 10:30:48,565,urllib3.connectionpool,WARNING : Retrying (Retry(total=2, connect=2, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DFCCB7FF08>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。')': /jsonrpc/0-----modelName=connectionpool.py,funcName=urlopen,codeLine=748 
+2019-11-19 10:30:48,565,urllib3.connectionpool,DEBUG : Starting new HTTP connection (10): 127.0.0.1:65126-----modelName=connectionpool.py,funcName=_new_conn,codeLine=225 
+2019-11-19 10:30:50,570,urllib3.util.retry,DEBUG : Incremented Retry for (url='/jsonrpc/0'): Retry(total=1, connect=1, read=None, redirect=None, status=None)-----modelName=retry.py,funcName=increment,codeLine=438 
+2019-11-19 10:30:51,571,urllib3.connectionpool,WARNING : Retrying (Retry(total=1, connect=1, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DFCCBE3A88>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。')': /jsonrpc/0-----modelName=connectionpool.py,funcName=urlopen,codeLine=748 
+2019-11-19 10:30:51,571,urllib3.connectionpool,DEBUG : Starting new HTTP connection (11): 127.0.0.1:65126-----modelName=connectionpool.py,funcName=_new_conn,codeLine=225 
+2019-11-19 10:30:53,574,urllib3.util.retry,DEBUG : Incremented Retry for (url='/jsonrpc/0'): Retry(total=0, connect=0, read=None, redirect=None, status=None)-----modelName=retry.py,funcName=increment,codeLine=438 
+2019-11-19 10:30:55,576,urllib3.connectionpool,WARNING : Retrying (Retry(total=0, connect=0, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DFCCBDFFC8>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。')': /jsonrpc/0-----modelName=connectionpool.py,funcName=urlopen,codeLine=748 
+2019-11-19 10:30:55,576,urllib3.connectionpool,DEBUG : Starting new HTTP connection (12): 127.0.0.1:65126-----modelName=connectionpool.py,funcName=_new_conn,codeLine=225 
+2019-11-19 10:30:57,778,urllib3.connectionpool,DEBUG : Starting new HTTP connection (13): 127.0.0.1:65126-----modelName=connectionpool.py,funcName=_new_conn,codeLine=225 
+2019-11-19 10:30:59,791,urllib3.util.retry,DEBUG : Incremented Retry for (url='/shell'): Retry(total=2, connect=2, read=None, redirect=None, status=None)-----modelName=retry.py,funcName=increment,codeLine=438 
+2019-11-19 10:30:59,791,urllib3.connectionpool,WARNING : Retrying (Retry(total=2, connect=2, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DFCD95EB48>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。')': /shell-----modelName=connectionpool.py,funcName=urlopen,codeLine=748 
+2019-11-19 10:30:59,791,urllib3.connectionpool,DEBUG : Starting new HTTP connection (14): 127.0.0.1:65126-----modelName=connectionpool.py,funcName=_new_conn,codeLine=225 
+2019-11-19 10:31:01,804,urllib3.util.retry,DEBUG : Incremented Retry for (url='/shell'): Retry(total=1, connect=1, read=None, redirect=None, status=None)-----modelName=retry.py,funcName=increment,codeLine=438 
+2019-11-19 10:31:02,804,urllib3.connectionpool,WARNING : Retrying (Retry(total=1, connect=1, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DFCCB6F4C8>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。')': /shell-----modelName=connectionpool.py,funcName=urlopen,codeLine=748 
+2019-11-19 10:31:02,804,urllib3.connectionpool,DEBUG : Starting new HTTP connection (15): 127.0.0.1:65126-----modelName=connectionpool.py,funcName=_new_conn,codeLine=225 
+2019-11-19 10:31:04,806,urllib3.util.retry,DEBUG : Incremented Retry for (url='/shell'): Retry(total=0, connect=0, read=None, redirect=None, status=None)-----modelName=retry.py,funcName=increment,codeLine=438 
+2019-11-19 10:31:06,807,urllib3.connectionpool,WARNING : Retrying (Retry(total=0, connect=0, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DFCCB6B908>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。')': /shell-----modelName=connectionpool.py,funcName=urlopen,codeLine=748 
+2019-11-19 10:31:06,808,urllib3.connectionpool,DEBUG : Starting new HTTP connection (16): 127.0.0.1:65126-----modelName=connectionpool.py,funcName=_new_conn,codeLine=225 
+2019-11-19 10:31:08,941,urllib3.connectionpool,DEBUG : Starting new HTTP connection (17): 127.0.0.1:65126-----modelName=connectionpool.py,funcName=_new_conn,codeLine=225 
+2019-11-19 10:31:10,954,urllib3.util.retry,DEBUG : Incremented Retry for (url='/jsonrpc/0'): Retry(total=2, connect=2, read=None, redirect=None, status=None)-----modelName=retry.py,funcName=increment,codeLine=438 
+2019-11-19 10:31:10,954,urllib3.connectionpool,WARNING : Retrying (Retry(total=2, connect=2, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DFCD6BF848>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。')': /jsonrpc/0-----modelName=connectionpool.py,funcName=urlopen,codeLine=748 
+2019-11-19 10:31:10,954,urllib3.connectionpool,DEBUG : Starting new HTTP connection (18): 127.0.0.1:65126-----modelName=connectionpool.py,funcName=_new_conn,codeLine=225 
+2019-11-19 10:31:12,971,urllib3.util.retry,DEBUG : Incremented Retry for (url='/jsonrpc/0'): Retry(total=1, connect=1, read=None, redirect=None, status=None)-----modelName=retry.py,funcName=increment,codeLine=438 
+2019-11-19 10:31:13,972,urllib3.connectionpool,WARNING : Retrying (Retry(total=1, connect=1, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DFCD723B88>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。')': /jsonrpc/0-----modelName=connectionpool.py,funcName=urlopen,codeLine=748 
+2019-11-19 10:31:13,972,urllib3.connectionpool,DEBUG : Starting new HTTP connection (19): 127.0.0.1:65126-----modelName=connectionpool.py,funcName=_new_conn,codeLine=225 
+2019-11-19 10:31:15,984,urllib3.util.retry,DEBUG : Incremented Retry for (url='/jsonrpc/0'): Retry(total=0, connect=0, read=None, redirect=None, status=None)-----modelName=retry.py,funcName=increment,codeLine=438 
+2019-11-19 10:31:17,985,urllib3.connectionpool,WARNING : Retrying (Retry(total=0, connect=0, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DFCD72B848>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。')': /jsonrpc/0-----modelName=connectionpool.py,funcName=urlopen,codeLine=748 
+2019-11-19 10:31:17,985,urllib3.connectionpool,DEBUG : Starting new HTTP connection (20): 127.0.0.1:65126-----modelName=connectionpool.py,funcName=_new_conn,codeLine=225 
+2019-11-19 10:31:19,999,retry.api,WARNING : HTTPConnectionPool(host='127.0.0.1', port=65126): Max retries exceeded with url: /jsonrpc/0 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DFCD6B55C8>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。')), retrying in 3.0 seconds...-----modelName=api.py,funcName=__retry_internal,codeLine=40 
+2019-11-19 10:31:23,000,urllib3.connectionpool,DEBUG : Starting new HTTP connection (21): 127.0.0.1:65126-----modelName=connectionpool.py,funcName=_new_conn,codeLine=225 
+2019-11-19 10:31:25,014,urllib3.util.retry,DEBUG : Incremented Retry for (url='/jsonrpc/0'): Retry(total=2, connect=2, read=None, redirect=None, status=None)-----modelName=retry.py,funcName=increment,codeLine=438 
+2019-11-19 10:31:25,014,urllib3.connectionpool,WARNING : Retrying (Retry(total=2, connect=2, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DFCDA28E88>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。')': /jsonrpc/0-----modelName=connectionpool.py,funcName=urlopen,codeLine=748 
+2019-11-19 10:31:25,014,urllib3.connectionpool,DEBUG : Starting new HTTP connection (22): 127.0.0.1:65126-----modelName=connectionpool.py,funcName=_new_conn,codeLine=225 
+2019-11-19 10:31:27,029,urllib3.util.retry,DEBUG : Incremented Retry for (url='/jsonrpc/0'): Retry(total=1, connect=1, read=None, redirect=None, status=None)-----modelName=retry.py,funcName=increment,codeLine=438 
+2019-11-19 10:31:28,030,urllib3.connectionpool,WARNING : Retrying (Retry(total=1, connect=1, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DFCD7D1988>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。')': /jsonrpc/0-----modelName=connectionpool.py,funcName=urlopen,codeLine=748 
+2019-11-19 10:31:28,030,urllib3.connectionpool,DEBUG : Starting new HTTP connection (23): 127.0.0.1:65126-----modelName=connectionpool.py,funcName=_new_conn,codeLine=225 
+2019-11-19 10:31:30,043,urllib3.util.retry,DEBUG : Incremented Retry for (url='/jsonrpc/0'): Retry(total=0, connect=0, read=None, redirect=None, status=None)-----modelName=retry.py,funcName=increment,codeLine=438 
+2019-11-19 10:31:32,043,urllib3.connectionpool,WARNING : Retrying (Retry(total=0, connect=0, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DFCD5EF048>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。')': /jsonrpc/0-----modelName=connectionpool.py,funcName=urlopen,codeLine=748 
+2019-11-19 10:31:32,043,urllib3.connectionpool,DEBUG : Starting new HTTP connection (24): 127.0.0.1:65126-----modelName=connectionpool.py,funcName=_new_conn,codeLine=225 
+2019-11-19 10:31:34,056,retry.api,WARNING : HTTPConnectionPool(host='127.0.0.1', port=65126): Max retries exceeded with url: /jsonrpc/0 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DFCDA23048>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。')), retrying in 3.5 seconds...-----modelName=api.py,funcName=__retry_internal,codeLine=40 
+2019-11-19 10:31:37,559,urllib3.connectionpool,DEBUG : Starting new HTTP connection (25): 127.0.0.1:65126-----modelName=connectionpool.py,funcName=_new_conn,codeLine=225 
+2019-11-19 10:31:39,563,urllib3.util.retry,DEBUG : Incremented Retry for (url='/jsonrpc/0'): Retry(total=2, connect=2, read=None, redirect=None, status=None)-----modelName=retry.py,funcName=increment,codeLine=438 
+2019-11-19 10:31:39,563,urllib3.connectionpool,WARNING : Retrying (Retry(total=2, connect=2, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DFCD520B88>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。')': /jsonrpc/0-----modelName=connectionpool.py,funcName=urlopen,codeLine=748 
+2019-11-19 10:31:39,563,urllib3.connectionpool,DEBUG : Starting new HTTP connection (26): 127.0.0.1:65126-----modelName=connectionpool.py,funcName=_new_conn,codeLine=225 
+2019-11-19 10:31:41,566,urllib3.util.retry,DEBUG : Incremented Retry for (url='/jsonrpc/0'): Retry(total=1, connect=1, read=None, redirect=None, status=None)-----modelName=retry.py,funcName=increment,codeLine=438 
+2019-11-19 10:31:42,568,urllib3.connectionpool,WARNING : Retrying (Retry(total=1, connect=1, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DFCCBE6D88>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。')': /jsonrpc/0-----modelName=connectionpool.py,funcName=urlopen,codeLine=748 
+2019-11-19 10:31:42,569,urllib3.connectionpool,DEBUG : Starting new HTTP connection (27): 127.0.0.1:65126-----modelName=connectionpool.py,funcName=_new_conn,codeLine=225 
+2019-11-19 10:31:44,582,urllib3.util.retry,DEBUG : Incremented Retry for (url='/jsonrpc/0'): Retry(total=0, connect=0, read=None, redirect=None, status=None)-----modelName=retry.py,funcName=increment,codeLine=438 
+2019-11-19 10:31:46,584,urllib3.connectionpool,WARNING : Retrying (Retry(total=0, connect=0, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DFCCBE7D08>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。')': /jsonrpc/0-----modelName=connectionpool.py,funcName=urlopen,codeLine=748 
+2019-11-19 10:31:46,584,urllib3.connectionpool,DEBUG : Starting new HTTP connection (28): 127.0.0.1:65126-----modelName=connectionpool.py,funcName=_new_conn,codeLine=225 
+2019-11-19 10:31:48,799,urllib3.connectionpool,DEBUG : Starting new HTTP connection (29): 127.0.0.1:65126-----modelName=connectionpool.py,funcName=_new_conn,codeLine=225 
+2019-11-19 10:31:50,813,urllib3.util.retry,DEBUG : Incremented Retry for (url='/jsonrpc/0'): Retry(total=2, connect=2, read=None, redirect=None, status=None)-----modelName=retry.py,funcName=increment,codeLine=438 
+2019-11-19 10:31:50,813,urllib3.connectionpool,WARNING : Retrying (Retry(total=2, connect=2, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DFCD7CF1C8>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。')': /jsonrpc/0-----modelName=connectionpool.py,funcName=urlopen,codeLine=748 
+2019-11-19 10:31:50,814,urllib3.connectionpool,DEBUG : Starting new HTTP connection (30): 127.0.0.1:65126-----modelName=connectionpool.py,funcName=_new_conn,codeLine=225 
+2019-11-19 10:31:52,818,urllib3.util.retry,DEBUG : Incremented Retry for (url='/jsonrpc/0'): Retry(total=1, connect=1, read=None, redirect=None, status=None)-----modelName=retry.py,funcName=increment,codeLine=438 
+2019-11-19 10:31:53,819,urllib3.connectionpool,WARNING : Retrying (Retry(total=1, connect=1, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DFCD978508>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。')': /jsonrpc/0-----modelName=connectionpool.py,funcName=urlopen,codeLine=748 
+2019-11-19 10:31:53,820,urllib3.connectionpool,DEBUG : Starting new HTTP connection (31): 127.0.0.1:65126-----modelName=connectionpool.py,funcName=_new_conn,codeLine=225 
+2019-11-19 10:31:55,834,urllib3.util.retry,DEBUG : Incremented Retry for (url='/jsonrpc/0'): Retry(total=0, connect=0, read=None, redirect=None, status=None)-----modelName=retry.py,funcName=increment,codeLine=438 
+2019-11-19 10:31:57,834,urllib3.connectionpool,WARNING : Retrying (Retry(total=0, connect=0, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DFCD978D88>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。')': /jsonrpc/0-----modelName=connectionpool.py,funcName=urlopen,codeLine=748 
+2019-11-19 10:31:57,834,urllib3.connectionpool,DEBUG : Starting new HTTP connection (32): 127.0.0.1:65126-----modelName=connectionpool.py,funcName=_new_conn,codeLine=225 
+2019-11-19 10:31:59,848,retry.api,WARNING : HTTPConnectionPool(host='127.0.0.1', port=65126): Max retries exceeded with url: /jsonrpc/0 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DFCD650B48>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。')), retrying in 3.0 seconds...-----modelName=api.py,funcName=__retry_internal,codeLine=40 
+2019-11-19 10:32:02,851,urllib3.connectionpool,DEBUG : Starting new HTTP connection (33): 127.0.0.1:65126-----modelName=connectionpool.py,funcName=_new_conn,codeLine=225 
+2019-11-19 10:32:04,866,urllib3.util.retry,DEBUG : Incremented Retry for (url='/jsonrpc/0'): Retry(total=2, connect=2, read=None, redirect=None, status=None)-----modelName=retry.py,funcName=increment,codeLine=438 
+2019-11-19 10:32:04,866,urllib3.connectionpool,WARNING : Retrying (Retry(total=2, connect=2, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DFCD6431C8>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。')': /jsonrpc/0-----modelName=connectionpool.py,funcName=urlopen,codeLine=748 
+2019-11-19 10:32:04,866,urllib3.connectionpool,DEBUG : Starting new HTTP connection (34): 127.0.0.1:65126-----modelName=connectionpool.py,funcName=_new_conn,codeLine=225 
+2019-11-19 10:32:06,881,urllib3.util.retry,DEBUG : Incremented Retry for (url='/jsonrpc/0'): Retry(total=1, connect=1, read=None, redirect=None, status=None)-----modelName=retry.py,funcName=increment,codeLine=438 
+2019-11-19 10:32:07,882,urllib3.connectionpool,WARNING : Retrying (Retry(total=1, connect=1, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DFCD8CDF88>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。')': /jsonrpc/0-----modelName=connectionpool.py,funcName=urlopen,codeLine=748 
+2019-11-19 10:32:07,883,urllib3.connectionpool,DEBUG : Starting new HTTP connection (35): 127.0.0.1:65126-----modelName=connectionpool.py,funcName=_new_conn,codeLine=225 
+2019-11-19 10:32:09,895,urllib3.util.retry,DEBUG : Incremented Retry for (url='/jsonrpc/0'): Retry(total=0, connect=0, read=None, redirect=None, status=None)-----modelName=retry.py,funcName=increment,codeLine=438 
+2019-11-19 10:32:11,896,urllib3.connectionpool,WARNING : Retrying (Retry(total=0, connect=0, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DFCD8CD348>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。')': /jsonrpc/0-----modelName=connectionpool.py,funcName=urlopen,codeLine=748 
+2019-11-19 10:32:11,896,urllib3.connectionpool,DEBUG : Starting new HTTP connection (36): 127.0.0.1:65126-----modelName=connectionpool.py,funcName=_new_conn,codeLine=225 
+2019-11-19 10:32:13,909,retry.api,WARNING : HTTPConnectionPool(host='127.0.0.1', port=65126): Max retries exceeded with url: /jsonrpc/0 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DFCD9B3B88>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。')), retrying in 3.5 seconds...-----modelName=api.py,funcName=__retry_internal,codeLine=40 
+2019-11-19 10:32:17,412,urllib3.connectionpool,DEBUG : Starting new HTTP connection (37): 127.0.0.1:65126-----modelName=connectionpool.py,funcName=_new_conn,codeLine=225 
+2019-11-19 10:32:19,424,urllib3.util.retry,DEBUG : Incremented Retry for (url='/jsonrpc/0'): Retry(total=2, connect=2, read=None, redirect=None, status=None)-----modelName=retry.py,funcName=increment,codeLine=438 
+2019-11-19 10:32:19,424,urllib3.connectionpool,WARNING : Retrying (Retry(total=2, connect=2, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DFCD9AA988>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。')': /jsonrpc/0-----modelName=connectionpool.py,funcName=urlopen,codeLine=748 
+2019-11-19 10:32:19,424,urllib3.connectionpool,DEBUG : Starting new HTTP connection (38): 127.0.0.1:65126-----modelName=connectionpool.py,funcName=_new_conn,codeLine=225 
+2019-11-19 10:32:21,437,urllib3.util.retry,DEBUG : Incremented Retry for (url='/jsonrpc/0'): Retry(total=1, connect=1, read=None, redirect=None, status=None)-----modelName=retry.py,funcName=increment,codeLine=438 
+2019-11-19 10:32:22,438,urllib3.connectionpool,WARNING : Retrying (Retry(total=1, connect=1, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DFCD9C0948>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。')': /jsonrpc/0-----modelName=connectionpool.py,funcName=urlopen,codeLine=748 
+2019-11-19 10:32:22,439,urllib3.connectionpool,DEBUG : Starting new HTTP connection (39): 127.0.0.1:65126-----modelName=connectionpool.py,funcName=_new_conn,codeLine=225 
+2019-11-19 10:32:24,453,urllib3.util.retry,DEBUG : Incremented Retry for (url='/jsonrpc/0'): Retry(total=0, connect=0, read=None, redirect=None, status=None)-----modelName=retry.py,funcName=increment,codeLine=438 
+2019-11-19 10:32:26,454,urllib3.connectionpool,WARNING : Retrying (Retry(total=0, connect=0, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001DFCD9C0D48>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。')': /jsonrpc/0-----modelName=connectionpool.py,funcName=urlopen,codeLine=748 
+2019-11-19 10:32:26,454,urllib3.connectionpool,DEBUG : Starting new HTTP connection (40): 127.0.0.1:65126-----modelName=connectionpool.py,funcName=_new_conn,codeLine=225 

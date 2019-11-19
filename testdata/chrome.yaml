@@ -1,0 +1,45 @@
+#包名
+packagename: com.android.chrome
+#欢迎页面id
+accept: com.android.chrome:id/terms_accept
+#不登录google账号
+no_login: com.android.chrome:id/negative_button
+#网址输入及搜索框
+input_url: com.android.chrome:id/search_box_text
+#百度弹出允许使用位置框
+location: android:id/button2
+#百度搜索按钮id
+search_bt: index-bn
+#打开网页后的地址栏
+top_url: com.android.chrome:id/url_bar
+#菜单按钮
+meun: com.android.chrome:id/menu_button_wrapper
+#设置
+setting: Settings
+#二级菜单
+secondary_meun:
+    - Search engine
+    - Passwords
+    - Payment methods
+    - Addresses and more
+    - Notifications
+    - Privacy
+    - Accessibility
+    - Site settings
+    - Languages
+    - Lite mode
+    - Downloads
+    - About Chrome
+third_meun:
+    - Bing
+    - Save passwords
+    - Add card
+    - Add address
+    - Show notifications
+    - Tap to Search
+    - Text scaling
+    - All sites
+    - Add language
+    - Learn more
+    - Download location
+    - Application version
