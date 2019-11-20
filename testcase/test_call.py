@@ -3,6 +3,7 @@ import pytest
 from page.base import Base
 from runlog import testLog
 from page.call_page import Call
+from runlog.testLog import get_log
 
 
 class TestCase_Call():
@@ -14,6 +15,7 @@ class TestCase_Call():
     def setup(self):
         self.tc.mapp_start(self.tc.call_info['packagename'])
 
+    @get_log
     def test_make_call(self):
         """拨打电话"""
         if self.tc.contact_notexsits():
@@ -26,6 +28,7 @@ class TestCase_Call():
 
     @pytest.mark.parametrize('s_meun,t_meun',
                              Base().get_meun_data('call.yaml'))
+    @get_log
     def test_meun(self,s_meun,t_meun):
         """测试遍历菜单"""
         self.tc.click_meun()
@@ -36,10 +39,10 @@ class TestCase_Call():
 
     def teardown(self):
         self.tc.mapp_stop(self.tc.call_info['packagename'])
-        print('执行完成')
+        print('Finished test')
 
 
 if __name__ == "__main__":
     testLog.startLog()
-    pytest.main([r'D:\mytools\SmokingTestCase\testcase\test_call.py::TestCase_Call::test_meun',
+    pytest.main([r'D:\mytools\SmokingTestCase\testcase\test_call.py::TestCase_Call::test_make_call',
                  ])

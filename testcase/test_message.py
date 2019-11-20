@@ -5,6 +5,8 @@ from runlog import testLog
 from page.message_page import Message
 import logging
 
+from runlog.testLog import get_log
+
 
 class TestCase_Message():
     """信息应用测试类"""
@@ -17,6 +19,7 @@ class TestCase_Message():
         # self.tc.mclick_home()
         self.tc.mapp_start(self.tc.mesg_info['packagename'])
 
+    @get_log
     def test_new_sms(self):
         """新建信息
         点击新建-输入号码-输入内容-发送"""
@@ -25,6 +28,7 @@ class TestCase_Message():
         self.tc.input_context()
         self.tc.send()
 
+    @get_log
     def test_forward_sms(self):
         """转发信息
         判断列表中是否有信息（无则判断失败）-点击第一个会话-长按第一条信息
@@ -39,6 +43,7 @@ class TestCase_Message():
             logging.error('no messages')
             assert False
 
+    @get_log
     def test_new_mms(self):
         """新建彩信
         点击新建-输入号码-输入内容-添加照片-发送"""
@@ -48,6 +53,7 @@ class TestCase_Message():
         self.tc.attach_photo()
         self.tc.send()
 
+    @get_log
     @pytest.mark.parametrize('s_meun,t_meun',
                              Base().get_meun_data('message.yaml'))
     def test_meun(self,s_meun,t_meun):
@@ -57,13 +63,12 @@ class TestCase_Message():
         if s_meun == 'Hear outgoing message sounds':
             logging.info('on/off bt')
         else:
-            t = self.tc.findele(text=t_meun).get_text()
+            t = self.tc.get_ele_text(text=t_meun)
             assert t in t_meun
         self.tc.mclick_back()
 
     def teardown(self):
         self.tc.mapp_stop(self.tc.mesg_info['packagename'])
-        logging.info('run done')
 
 
 if __name__ == "__main__":

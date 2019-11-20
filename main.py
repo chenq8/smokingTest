@@ -6,12 +6,12 @@ import logging
 if __name__=='__main__':
     """脚本程序入口"""
     testLog.startLog()
-    pytest.main([r'D:\mytools\SmokingTestCase\testcase','--alluredir=./allure-results'])
-    logging.info('run done')
+    logging.info('Start smoking test')
+    pytest.main([r'D:\mytools\SmokingTestCase\testcase\test_contact.py','--alluredir=./allure-results'])
     os.system('allure generate '
               r'D:\mytools\SmokingTestCase\allure-results/ '
               r'-o '
-              r'D:\mytools\SmokingTestCase\allure-results/report '
+              r'D:\mytools\SmokingTestCase/report '
               r'--clean')
-    logging.info('report done')
+    logging.info('Finished smoking test')
 

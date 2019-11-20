@@ -9,7 +9,17 @@ def startLog():
     file = logging.FileHandler(filename, 'w+')
 
     # 配置Log
+    # logging.basicConfig(level=logging.INFO, handlers=[pr, file],
+    #                     format="%(asctime)s,%(name)s,%(levelname)s : %(message)s"
+    #                            "-----modelName=%(filename)s,funcName=%(funcName)s,codeLine=%(lineno)s ",
+    #                     )
     logging.basicConfig(level=logging.INFO, handlers=[pr, file],
                         format="%(asctime)s,%(name)s,%(levelname)s : %(message)s"
-                               "-----modelName=%(filename)s,funcName=%(funcName)s,codeLine=%(lineno)s ",
                         )
+
+def get_log(func):
+    def inner(*args,**kwargs):
+        logging.critical('begin test %s'%func.__name__)
+        func(*args,**kwargs)
+        logging.critical('Finished test %s'%func.__name__)
+    return inner

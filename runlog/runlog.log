@@ -1,0 +1,22 @@
+2019-11-20 17:54:53,286,root,INFO : Start smoking test
+2019-11-20 17:54:53,658,root,INFO : connect success
+2019-11-20 17:54:53,661,retry.api,WARNING : uiautomator2.GatewayError(gateway error, time used 0.0s), retrying in 3.0 seconds...
+2019-11-20 17:54:58,058,root,INFO : clicked home
+2019-11-20 17:54:58,408,root,INFO : app com.android.contacts start done
+2019-11-20 17:55:05,212,root,ERROR : -32002 Client error: <> data: , method: None
+2019-11-20 17:55:05,212,root,ERROR : Not Found Element {'description': 'Open navigation drawer'}
+2019-11-20 17:55:05,212,root,INFO : fail picture name is 2019_11_20_175505_click_meun_bt_.png
+2019-11-20 17:55:05,465,root,INFO : screenshot success
+2019-11-20 17:55:05,879,root,INFO : clicked home
+2019-11-20 17:55:06,205,root,INFO : app com.android.contacts start done
+2019-11-20 17:55:13,039,root,ERROR : -32002 Client error: <> data: , method: None
+2019-11-20 17:55:13,039,root,ERROR : Not Found Element {'description': 'Open navigation drawer'}
+2019-11-20 17:55:13,039,root,INFO : fail picture name is 2019_11_20_175513_click_meun_bt_.png
+2019-11-20 17:55:13,293,root,INFO : screenshot success
+2019-11-20 17:55:13,573,root,INFO : clicked home
+2019-11-20 17:55:13,899,root,INFO : app com.android.contacts start done
+2019-11-20 17:55:20,723,root,ERROR : -32002 Client error: <> data: , method: None
+2019-11-20 17:55:20,724,root,ERROR : Not Found Element {'description': 'Open navigation drawer'}
+2019-11-20 17:55:20,724,root,INFO : fail picture name is 2019_11_20_175520_click_meun_bt_.png
+2019-11-20 17:55:20,976,root,INFO : screenshot success
+2019-11-20 17:55:23,271,root,INFO : Finished smoking test

@@ -3,7 +3,8 @@ import pytest
 from page.base import Base
 from runlog import testLog
 from page.chrome_page import Chrome
-import logging
+
+from runlog.testLog import get_log
 
 
 class TestCase_Chrome():
@@ -14,16 +15,17 @@ class TestCase_Chrome():
         self.tc.mconnect()
 
     def setup(self):
-        # self.record = self.tc.record()
         # self.tc.mapp_start(self.tc.chrome_info['packagename'])
         self.tc.start_chrome()
 
+    @get_log
     def test_open_baidu(self):
         self.tc.input_url("www.baidu.com")
-        assert '百度一下' in self.tc.get_baidu_text()
+        assert '百度一下' in self.tc.get_baidu_text
 
     @pytest.mark.parametrize('s_meun,t_meun',
                              Base().get_meun_data('chrome.yaml'))
+    @get_log
     def test_meun(self,s_meun,t_meun):
         """测试遍历菜单"""
         self.tc.click_meun()
@@ -35,8 +37,6 @@ class TestCase_Chrome():
 
     def teardown(self):
         self.tc.mapp_stop(self.tc.chrome_info['packagename'])
-        # self.record.close()
-        logging.info('test done')
 
 
 if __name__ == "__main__":

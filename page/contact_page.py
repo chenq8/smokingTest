@@ -12,6 +12,8 @@ class Contact(Base):
 
     def click_add_bt(self):
         """点出联系人新建按钮"""
+        if self.ele_exists(resourceId=self.contact_info['add_account']):
+            self.mclick(resourceId=self.contact_info['account_back'])
         self.mclick(resourceId=self.contact_info['addbt'])
 
     def click_meun_bt(self):
@@ -28,6 +30,7 @@ class Contact(Base):
         """输入联系人姓名及号码"""
         self.minput(self.contact_info['contact_name'],
                     text=self.contact_info['name_input'])
+        self.mclick(text=self.contact_info['top_bar'])
         self.minput(self.contact_info['phonenumber'],
                     text=self.contact_info['phone_input'])
 

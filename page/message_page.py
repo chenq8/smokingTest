@@ -19,7 +19,7 @@ class Message(Base):
 
     def input_context(self):
         """输入信息内容"""
-        self.minput(self.mesg_info['mesg_text'], text=self.mesg_info['message'])
+        self.minput(self.mesg_info['mesg_text'], resourceId=self.mesg_info['message'])
 
     def attach_photo(self):
         """为信息添加照片"""
@@ -30,6 +30,8 @@ class Message(Base):
     def send(self):
         """发送按钮"""
         self.mclick(self.mesg_info['send_bt'])
+        if self.ele_exists(resourceId=self.mesg_info['cost']):
+            self.mclick(resourceId=self.mesg_info['sure'])
 
     def click_setting(self):
         """进入信息设置"""
@@ -38,7 +40,7 @@ class Message(Base):
 
     def mesg_exists(self):
         """判断是否有信息存在"""
-        return self.findele(resourceId=self.mesg_info['mesg_list']).exists
+        return self.ele_exists(resourceId=self.mesg_info['mesg_list'])
 
     def select_mesg(self):
         """选择要转发的信息"""
@@ -62,5 +64,5 @@ class Message(Base):
         if s_meun == 'Hear outgoing message sounds':
             logging.info('on/off bt')
         else:
-            t = self.findele(text=t_meun).get_text()
+            t = self.get_ele_text(text=t_meun)
             assert t in t_meun

@@ -7,11 +7,15 @@ number_in: android.widget.ScrollView
 #号码
 number: 10010
 #信息内容输入框
-message: Text message
+message: com.google.android.apps.messaging:id/compose_message_text
 #信息内容
-mesg_text: To click the switch widget right to the TextView 'Wi‑Fi', we need to select the switch widgets first. However, according to the UI hierarchy, more than one switch widgets exist and have almost the same properties. Selecting by className will not work. Alternatively, the below selecting strategy would help
+mesg_text: To click the switch widget right to the TextView 'Wi‑Fi'
 #发送按钮
 send_bt: com.google.android.apps.messaging:id/send_message_button_container
+# 第一次发送会有花费提示框
+cost: android:id/sms_short_code_detail_message
+# 花费提示框确定
+sure: android:id/button1
 #添加附件按钮
 attach_bt: com.google.android.apps.messaging:id/attach_media_button
 #相机按钮
