@@ -3,8 +3,9 @@ import logging
 
 def startLog():
     # 屏幕显示输出log
+    log_main_dir = r'D:\mytools\SmokingTestCase'
     pr = logging.StreamHandler()
-    filename = os.path.join(r'D:\mytools\SmokingTestCase','runlog','runlog.log')
+    filename = os.path.join(log_main_dir,'runlog','runlog.log')
     # 将log输出至文件
     file = logging.FileHandler(filename, 'w+')
 

@@ -10,10 +10,10 @@ class TestCase_Call():
     """联系人应用测试类，只可以使用contact类中的方法"""
     def setup_class(self):
         self.tc = Call()
-        self.tc.mconnect()
+        self.tc.m_connect()
 
     def setup(self):
-        self.tc.mapp_start(self.tc.call_info['packagename'])
+        self.tc.m_app_start(self.tc.call_info['packagename'])
 
     @get_log
     def test_make_call(self):
@@ -27,18 +27,18 @@ class TestCase_Call():
         self.tc.end_call()
 
     @pytest.mark.parametrize('s_meun,t_meun',
-                             Base().get_meun_data('call.yaml'))
+                             Base().m_get_meun('call.yaml'))
     @get_log
     def test_meun(self,s_meun,t_meun):
         """测试遍历菜单"""
         self.tc.click_meun()
         self.tc.click_setting()
-        self.tc.mclick(text=s_meun)
-        t = self.tc.get_ele_text(t_meun)
+        self.tc.m_click(text=s_meun)
+        t = self.tc.m_get_ele_text(t_meun)
         assert t in t_meun
 
     def teardown(self):
-        self.tc.mapp_stop(self.tc.call_info['packagename'])
+        self.tc.m_app_stop(self.tc.call_info['packagename'])
         print('Finished test')
 
 

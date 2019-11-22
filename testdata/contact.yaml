@@ -47,8 +47,9 @@ secondary_meun :
 #  -   'Sort by'
 #  -   'Name format'
 #  -   'Phonetic name'
-  -   'Import'
-  -   'Blocked numbers'
+#  -   'Import'
+#  -   'Export'
+#  -   'Blocked numbers'
   -   'About Contacts'
 #点击二级菜单的弹出显示，用于验证
 third_meun:
@@ -60,6 +61,6 @@ third_meun:
 #  -  'Last name first'
 #  -  'Hide if empty'
 #  -  'SIM card'
-  -  'Share all contacts'
-  -  'ADD A NUMBER'
+#  -  'Share all contacts'
+#  -  'ADD A NUMBER'
   -  'Build version'

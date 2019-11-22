@@ -8,35 +8,36 @@ class Contact(Base):
     """联系人应用的所有页面操作类,此类中的d可以直接使用u2的所有方法"""
 
     def __init__(self):
-        self.contact_info = self.get_data('contact.yaml')
+
+        self.contact_info = self.m_get_data('contact.yaml')
 
     def click_add_bt(self):
         """点出联系人新建按钮"""
-        if self.ele_exists(resourceId=self.contact_info['add_account']):
-            self.mclick(resourceId=self.contact_info['account_back'])
-        self.mclick(resourceId=self.contact_info['addbt'])
+        if self.m_ele_exists(resourceId=self.contact_info['add_account']):
+            self.m_click(resourceId=self.contact_info['account_back'])
+        self.m_click(resourceId=self.contact_info['addbt'])
 
     def click_meun_bt(self):
         """点击主菜单"""
-        self.mclick(description=self.contact_info['meun'])
+        self.m_click(description=self.contact_info['meun'])
 
     def longclick_frist_contact(self):
         """长按第一个联系人"""
         logging.info('long click')
-        self.mlong_click(className=self.contact_info['contact_list'],
-                         index=3)
+        self.m_long_click(className=self.contact_info['contact_list'],
+                          index=3)
 
     def input_contact_mesg(self):
         """输入联系人姓名及号码"""
-        self.minput(self.contact_info['contact_name'],
-                    text=self.contact_info['name_input'])
-        self.mclick(text=self.contact_info['top_bar'])
-        self.minput(self.contact_info['phonenumber'],
-                    text=self.contact_info['phone_input'])
+        self.m_input(self.contact_info['contact_name'],
+                     text=self.contact_info['name_input'])
+        self.m_click(text=self.contact_info['top_bar'])
+        self.m_input(self.contact_info['phonenumber'],
+                     text=self.contact_info['phone_input'])
 
     def save_contact(self):
         """点击联系人保存按钮"""
-        self.mclick(resourceId=self.contact_info['saveid'])
+        self.m_click(resourceId=self.contact_info['saveid'])
         logging.info('save success')
 
     # def get_Verify_text(self):
@@ -54,8 +55,8 @@ class Contact(Base):
     def do_del(self):
         """删除操作
         点击删除按钮-确认删除"""
-        self.mclick(resourceId=self.contact_info['delbt'])
-        self.mclick(resourceId=self.contact_info['do_del'])
+        self.m_click(resourceId=self.contact_info['delbt'])
+        self.m_click(resourceId=self.contact_info['do_del'])
 
     def new_contact(self):
         """新建联系人
@@ -63,7 +64,7 @@ class Contact(Base):
         self.click_add_bt()
         self.input_contact_mesg()
         self.save_contact()
-        self.mclick_back()
+        self.m_click_back()
 
     def click_setting(self):
-        self.mclick(resourceId=self.contact_info['setting_id'])
+        self.m_click(resourceId=self.contact_info['setting_id'])

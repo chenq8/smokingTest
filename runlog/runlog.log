@@ -1,22 +1,11 @@
-2019-11-20 17:54:53,286,root,INFO : Start smoking test
-2019-11-20 17:54:53,658,root,INFO : connect success
-2019-11-20 17:54:53,661,retry.api,WARNING : uiautomator2.GatewayError(gateway error, time used 0.0s), retrying in 3.0 seconds...
-2019-11-20 17:54:58,058,root,INFO : clicked home
-2019-11-20 17:54:58,408,root,INFO : app com.android.contacts start done
-2019-11-20 17:55:05,212,root,ERROR : -32002 Client error: <> data: , method: None
-2019-11-20 17:55:05,212,root,ERROR : Not Found Element {'description': 'Open navigation drawer'}
-2019-11-20 17:55:05,212,root,INFO : fail picture name is 2019_11_20_175505_click_meun_bt_.png
-2019-11-20 17:55:05,465,root,INFO : screenshot success
-2019-11-20 17:55:05,879,root,INFO : clicked home
-2019-11-20 17:55:06,205,root,INFO : app com.android.contacts start done
-2019-11-20 17:55:13,039,root,ERROR : -32002 Client error: <> data: , method: None
-2019-11-20 17:55:13,039,root,ERROR : Not Found Element {'description': 'Open navigation drawer'}
-2019-11-20 17:55:13,039,root,INFO : fail picture name is 2019_11_20_175513_click_meun_bt_.png
-2019-11-20 17:55:13,293,root,INFO : screenshot success
-2019-11-20 17:55:13,573,root,INFO : clicked home
-2019-11-20 17:55:13,899,root,INFO : app com.android.contacts start done
-2019-11-20 17:55:20,723,root,ERROR : -32002 Client error: <> data: , method: None
-2019-11-20 17:55:20,724,root,ERROR : Not Found Element {'description': 'Open navigation drawer'}
-2019-11-20 17:55:20,724,root,INFO : fail picture name is 2019_11_20_175520_click_meun_bt_.png
-2019-11-20 17:55:20,976,root,INFO : screenshot success
-2019-11-20 17:55:23,271,root,INFO : Finished smoking test
+2019-11-22 09:50:34,800,root,INFO : device is emulator-5554
+2019-11-22 09:50:34,800,root,INFO : Start smoking t2019-11-22 09:50:37,402,root,INFO : connect to 3c5a55a3 success
+2019-11-222019-11-22 09:50:38,467,root,INFO : clic2019-11-22 09:50:39,000,root,ERROR : package "com.android.contacts" not found
+20192019-11-22 09:50:43,410,root,INFO : clicked Element {'description': 'Open navigation drawer'}
+2019-11-22 09:50:46,719,root,INFO : clicked Element {'resourceId': 'com.android.contacts:id/nav_settings'}
+2019-11-22 09:50:50,038,root,INFO : clicked Element {'text': 'About Contacts'}
+2019-11-22 09:50:50,182,root,INFO : clicked back
+2019-11-22 09:50:50,249,root,INFO : allure is D:\mytools\SmokingTestCase\report\emulator-5554_allure_results report is D:\mytools\SmokingTestCase\report\emulator-5554_report
+2019-11-22 09:50:52,306,root,INFO : Finished smoking test
+7,root,INFO : allure is D:\mytools\SmokingTestCase\report\3c5a55a3_allure_results report is D:\mytools\SmokingTestCase\report\3c5a55a3_report
+2019-11-22 09:50:49,105,root,INFO : Finished smoking test

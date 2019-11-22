@@ -13,11 +13,11 @@ class TestCase_Message():
 
     def setup_class(self):
         self.tc = Message()
-        self.tc.mconnect()
+        self.tc.m_connect()
 
     def setup(self):
         # self.tc.mclick_home()
-        self.tc.mapp_start(self.tc.mesg_info['packagename'])
+        self.tc.m_app_start(self.tc.mesg_info['packagename'])
 
     @get_log
     def test_new_sms(self):
@@ -55,20 +55,20 @@ class TestCase_Message():
 
     @get_log
     @pytest.mark.parametrize('s_meun,t_meun',
-                             Base().get_meun_data('message.yaml'))
+                             Base().m_get_meun('message.yaml'))
     def test_meun(self,s_meun,t_meun):
         """测试遍历菜单"""
         self.tc.click_setting()
-        self.tc.mclick(text=s_meun)
+        self.tc.m_click(text=s_meun)
         if s_meun == 'Hear outgoing message sounds':
             logging.info('on/off bt')
         else:
-            t = self.tc.get_ele_text(text=t_meun)
+            t = self.tc.m_get_ele_text(text=t_meun)
             assert t in t_meun
-        self.tc.mclick_back()
+        self.tc.m_click_back()
 
     def teardown(self):
-        self.tc.mapp_stop(self.tc.mesg_info['packagename'])
+        self.tc.m_app_stop(self.tc.mesg_info['packagename'])
 
 
 if __name__ == "__main__":
