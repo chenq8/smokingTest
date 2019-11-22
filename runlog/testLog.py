@@ -1,19 +1,16 @@
 import os
 import logging
-
+import project_conf
+import time
 def startLog():
     # 屏幕显示输出log
-    log_main_dir = r'D:\mytools\SmokingTestCase'
+    tformat = '%Y_%m_%d_%H%M%S'
+    mytime = time.strftime(tformat, time.localtime())
     pr = logging.StreamHandler()
-    filename = os.path.join(log_main_dir,'runlog','runlog.log')
+    filename = os.path.join(project_conf.PROJECT_PATH,'runlog','%s_%s_log.log'%(mytime,project_conf.PROJECT_SN))
     # 将log输出至文件
     file = logging.FileHandler(filename, 'w+')
 
-    # 配置Log
-    # logging.basicConfig(level=logging.INFO, handlers=[pr, file],
-    #                     format="%(asctime)s,%(name)s,%(levelname)s : %(message)s"
-    #                            "-----modelName=%(filename)s,funcName=%(funcName)s,codeLine=%(lineno)s ",
-    #                     )
     logging.basicConfig(level=logging.INFO, handlers=[pr, file],
                         format="%(asctime)s,%(name)s,%(levelname)s : %(message)s"
                         )

@@ -26,15 +26,15 @@ class TestCase_Call():
             self.tc.click_call_bt()
         self.tc.end_call()
 
+    @pytest.mark.skip()
     @pytest.mark.parametrize('s_meun,t_meun',
                              Base().m_get_meun('call.yaml'))
-    @get_log
-    def test_meun(self,s_meun,t_meun):
+    def test_call_meun(self,s_meun,t_meun):
         """测试遍历菜单"""
         self.tc.click_meun()
         self.tc.click_setting()
         self.tc.m_click(text=s_meun)
-        t = self.tc.m_get_ele_text(t_meun)
+        t = self.tc.m_get_ele_text(text=t_meun)
         assert t in t_meun
 
     def teardown(self):

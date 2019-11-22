@@ -16,6 +16,7 @@ class Message(Base):
         """"输入号码"""
         self.m_input(self.mesg_info['number'], className=self.mesg_info['number_in'])
         self.d.send_action('go')
+        logging.info('action done')
 
     def input_context(self):
         """输入信息内容"""
@@ -26,12 +27,14 @@ class Message(Base):
         self.m_click(resourceId=self.mesg_info['attach_bt'])
         self.m_click(text=self.mesg_info['camera'])
         self.m_click(resourceId=self.mesg_info['takept'])
+        logging.info('photo attach done')
 
     def send(self):
         """发送按钮"""
-        self.m_click(self.mesg_info['send_bt'])
+        self.m_click(resourceId=self.mesg_info['send_bt'])
         if self.m_ele_exists(resourceId=self.mesg_info['cost']):
             self.m_click(resourceId=self.mesg_info['sure'])
+        logging.info('send done')
 
     def click_setting(self):
         """进入信息设置"""

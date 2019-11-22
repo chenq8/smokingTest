@@ -18,10 +18,10 @@ class Base():
     def m_connect(self,*args):
         """连接服务"""
         try:
-            print(project_conf.PROJECT_SN)
             self.d = u2.connect(project_conf.PROJECT_SN)
             self.d.click_post_delay = 1.5
             self.d.implicitly_wait(5)
+            # self.d.set_fastinput_ime(True)
             logging.info('connect to %s success'%project_conf.PROJECT_SN)
             return self.d
         except Exception as e:
@@ -89,7 +89,7 @@ class Base():
         """返回控件文本"""
         try:
             return self.d(**kwargs).get_text()
-        except:
+        except Exception as e:
             logging.error(e)
             logging.error('Not Found Element %s' % kwargs)
             name = sys._getframe(1).f_code.co_name

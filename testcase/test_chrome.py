@@ -21,17 +21,17 @@ class TestCase_Chrome():
     @get_log
     def test_open_baidu(self):
         self.tc.input_url("www.baidu.com")
-        assert '百度一下' in self.tc.get_baidu_text
+        assert '百度一下' in self.tc.get_baidu_text()
 
+    @pytest.mark.skip()
     @pytest.mark.parametrize('s_meun,t_meun',
                              Base().m_get_meun('chrome.yaml'))
-    @get_log
-    def test_meun(self,s_meun,t_meun):
+    def test_chrome_meun(self,s_meun,t_meun):
         """测试遍历菜单"""
         self.tc.click_meun()
         self.tc.click_setting()
         self.tc.m_click(text=s_meun)
-        t = self.tc.m_get_ele_text(t_meun)
+        t = self.tc.m_get_ele_text(text=t_meun)
         self.tc.m_click_back()
         assert t in t_meun
 

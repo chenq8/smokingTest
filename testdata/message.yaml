@@ -9,9 +9,11 @@ number: 10010
 #信息内容输入框
 message: com.google.android.apps.messaging:id/compose_message_text
 #信息内容
-mesg_text: To click the switch widget right to the TextView 'Wi‑Fi'
+mesg_text: test send messsages
 #发送按钮
 send_bt: com.google.android.apps.messaging:id/send_message_button_container
+  #com.google.android.apps.messaging:id/message_indicator
+
 # 第一次发送会有花费提示框
 cost: android:id/sms_short_code_detail_message
 # 花费提示框确定
@@ -50,6 +52,7 @@ secondary_meun:
 third_meun:
   - Messages
   - Pop on screen
+  - bt
   - Cancel
   - Learn more
   - Service messages

@@ -5,6 +5,7 @@ import logging
 import project_conf
 from multiprocessing import Process
 import subprocess
+import myemail
 
 
 def getphonelist():
@@ -22,10 +23,9 @@ def getphonelist():
 
 def main(devices):
     """脚本程序入口"""
-    testLog.startLog()
     project_conf.PROJECT_SN = devices
-
-    case_path = os.path.join(project_conf.PROJECT_PATH,'testcase','test_contact.py')
+    testLog.startLog()
+    case_path = os.path.join(project_conf.PROJECT_PATH,'testcase')
     allure_path = os.path.join(project_conf.PROJECT_PATH,'report','%s_allure_results'%project_conf.PROJECT_SN)
     allure_report_path = os.path.join(project_conf.PROJECT_PATH,'report','%s_report'%project_conf.PROJECT_SN)
 
@@ -43,7 +43,8 @@ def main(devices):
               (allure_path, allure_report_path))
 
     logging.info('Finished smoking test')
-
+    myemail.mySendMail()
+    logging.info('Mail has been sent')
 
 if __name__ == '__main__':
     p = []
