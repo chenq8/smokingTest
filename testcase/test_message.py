@@ -1,11 +1,11 @@
 import pytest
 
 from page.base import Base
-from runlog import testLog
+import MyLog
 from page.message_page import Message
 import logging
 
-from runlog.testLog import get_log
+from MyLog import get_log
 
 
 class TestCase_Message():
@@ -71,6 +71,6 @@ class TestCase_Message():
 
 
 if __name__ == "__main__":
-    testLog.startLog()
+    MyLog.startLog()
     pytest.main([r'D:\mytools\SmokingTestCase\testcase\test_message.py::'
                  r'TestCase_Message::test_meun'])

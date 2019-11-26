@@ -1,9 +1,9 @@
 import pytest
 
 from page.base import Base
-from runlog import testLog
+import MyLog
 from page.call_page import Call
-from runlog.testLog import get_log
+from MyLog import get_log
 
 
 class TestCase_Call():
@@ -43,6 +43,6 @@ class TestCase_Call():
 
 
 if __name__ == "__main__":
-    testLog.startLog()
+    MyLog.startLog()
     pytest.main([r'D:\mytools\SmokingTestCase\testcase\test_call.py::TestCase_Call::test_make_call',
                  ])

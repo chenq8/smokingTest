@@ -11,16 +11,18 @@ class Message(Base):
     def click_create_bt(self):
         """"点击新建按钮"""
         self.m_click(resourceId=self.mesg_info['new_chat'])
+        logging.info('click create bt done')
 
     def input_number(self):
         """"输入号码"""
         self.m_input(self.mesg_info['number'], className=self.mesg_info['number_in'])
         self.d.send_action('go')
-        logging.info('action done')
+        logging.info('input phone number done')
 
     def input_context(self):
         """输入信息内容"""
         self.m_input(self.mesg_info['mesg_text'], resourceId=self.mesg_info['message'])
+        logging.info('input message context done')
 
     def attach_photo(self):
         """为信息添加照片"""
@@ -40,6 +42,7 @@ class Message(Base):
         """进入信息设置"""
         self.click_option()
         self.m_click(text=self.mesg_info['setting'])
+        logging.info('click message settings')
 
     def mesg_exists(self):
         """判断是否有信息存在"""
@@ -50,16 +53,19 @@ class Message(Base):
         self.m_click(resourceId=self.mesg_info['mesg_list'],
                      index=0)
         self.m_long_click(resourceId=self.mesg_info['session_list'])
+        logging.info('one message select done')
 
     def click_option(self):
         """点击选项菜单，在信息内容列表界面"""
         self.m_click(description=self.mesg_info['option_list'])
+        logging.info('click more option done')
 
     def forward_to_new(self):
         """"选择使用新信息转发
         点击选项菜单-选择转发-选择使用新信息"""
         self.m_click(resourceId=self.mesg_info['forward_bt'], index=1)
         self.m_click(resourceId=self.mesg_info['for_new'])
+        logging.info('click forward message')
 
     def click_all_meun(self, s_meun, t_meun):
         self.click_setting()

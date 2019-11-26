@@ -1,5 +1,5 @@
 from page.base import Base
-
+import logging
 
 class Chrome(Base):
     def __init__(self):
@@ -15,6 +15,7 @@ class Chrome(Base):
         if self.m_ele_exists(resourceId=self.chrome_info['accept']):
             self.m_click(resourceId=self.chrome_info['accept'])
             self.m_click(resourceId=self.chrome_info['no_login'])
+            logging.info('skip welcome done')
 
     def input_url(self,url):
         """打开百度
@@ -26,6 +27,7 @@ class Chrome(Base):
         else:
             self.m_input(url, resourceId=self.chrome_info['top_url'])
         self.m_input_enter()
+        logging.info('search done')
 
     def get_baidu_text(self):
         """返回百度搜索按钮的文本
@@ -38,9 +40,12 @@ class Chrome(Base):
         else:
             return self.m_get_ele_text(resourceId=self.chrome_info['search_bt'])
 
+
     def click_meun(self):
         self.m_click(resourceId=self.chrome_info['meun'])
+        logging.info('click chrome main meun done')
 
     def click_setting(self):
         self.m_click(text=self.chrome_info['setting'])
+        logging.info('click chrome settings')
         self.m_scroll_to_end()

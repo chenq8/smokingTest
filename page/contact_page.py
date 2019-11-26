@@ -1,7 +1,5 @@
 from page.base import Base
 import logging
-from runlog import testLog
-
 
 
 class Contact(Base):
@@ -16,24 +14,28 @@ class Contact(Base):
         if self.m_ele_exists(resourceId=self.contact_info['add_account']):
             self.m_click(resourceId=self.contact_info['account_back'])
         self.m_click(resourceId=self.contact_info['addbt'])
+        logging.info('click start chat')
 
     def click_meun_bt(self):
         """点击主菜单"""
         self.m_click(description=self.contact_info['meun'])
+        logging.info('click contact main meun')
 
     def longclick_frist_contact(self):
         """长按第一个联系人"""
-        logging.info('long click')
         self.m_long_click(className=self.contact_info['contact_list'],
                           index=3)
+        logging.info('click frist contact done')
 
     def input_contact_mesg(self):
         """输入联系人姓名及号码"""
         self.m_input(self.contact_info['contact_name'],
                      text=self.contact_info['name_input'])
+        logging.info('input contact name done')
         self.m_click(text=self.contact_info['top_bar'])
         self.m_input(self.contact_info['phonenumber'],
                      text=self.contact_info['phone_input'])
+        logging.info('input contact phonenumber done')
 
     def save_contact(self):
         """点击联系人保存按钮"""
@@ -57,6 +59,7 @@ class Contact(Base):
         点击删除按钮-确认删除"""
         self.m_click(resourceId=self.contact_info['delbt'])
         self.m_click(resourceId=self.contact_info['do_del'])
+        logging.info('del contact done')
 
     def new_contact(self):
         """新建联系人
@@ -65,6 +68,8 @@ class Contact(Base):
         self.input_contact_mesg()
         self.save_contact()
         self.m_click_back()
+        logging.info('new contact done')
 
     def click_setting(self):
         self.m_click(resourceId=self.contact_info['setting_id'])
+        logging.info('input contact settings')

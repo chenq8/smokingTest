@@ -1,10 +1,10 @@
 import pytest
 
 from page.base import Base
-from runlog import testLog
+import MyLog
 from page.chrome_page import Chrome
 
-from runlog.testLog import get_log
+from MyLog import get_log
 
 
 class TestCase_Chrome():
@@ -40,7 +40,7 @@ class TestCase_Chrome():
 
 
 if __name__ == "__main__":
-    testLog.startLog()
+    MyLog.startLog()
     pytest.main([r'D:\mytools\SmokingTestCase\testcase\test_chrome.py'
                  r'::TestCase_Chrome::test_open_baidu',
                  ])

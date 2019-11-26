@@ -1,3 +1,5 @@
+import logging
+
 from page.base import Base
 
 
@@ -18,15 +20,18 @@ class Call(Base):
         self.m_input(self.call_info['phonenumber'],
                      text=self.call_info['phone_input'])
         self.m_click(resourceId=self.call_info['saveid'])
+        logging.info('creat first contact done')
 
     def click_call_bt(self):
         """点击拨号"""
         self.m_click(resourceId=self.call_info['call_bt'])
+        logging.info('click call done')
 
     def click_contact(self):
         """点击第一个联系人"""
         self.m_click(resourceId=self.call_info['contact_list'],
                      index=1)
+        logging.info('click first contact done')
 
     def get_call_time(self):
         """取得通话时间,模拟器无text时间值"""
@@ -39,11 +44,14 @@ class Call(Base):
             if '00:10' in self.get_call_time():
                 self.m_click(resourceId=self.call_info['end_call'])
                 flag = False
+        logging.info('end call done')
 
     def click_meun(self):
         """点击菜单"""
         self.m_click(resourceId=self.call_info['meun'])
+        logging.info('click call main meun done')
 
     def click_setting(self):
         """点击设置"""
         self.m_click(text=self.call_info['setting'])
+        logging.info('click call settings')
