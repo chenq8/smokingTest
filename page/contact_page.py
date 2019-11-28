@@ -52,7 +52,7 @@ class Contact(Base):
 
     def contact_isempty(self):
         """判断是否有联系人"""
-        return self.d(text=self.contact_info['emptytext']).exists
+        return self.m_ele_exists(text=self.contact_info['emptytext'])
 
     def do_del(self):
         """删除操作

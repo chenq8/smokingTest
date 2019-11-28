@@ -1,10 +1,12 @@
 import pytest
-import MyLog
 import os
 import logging
 import project_conf
 from multiprocessing import Process
+from threading import Thread, Event
 import subprocess
+import myui
+import MyLog
 
 
 def getphonelist():
@@ -25,23 +27,25 @@ def get_test_file():
     """
     case_file_list = {
         'call': 'test_call.py',
-        'caontact': 'test_contact.py',
+        'contact': 'test_contact.py',
         'message': 'test_message.py',
         'chrome': 'test_chrome.py',
     }
 
-    test_app = project_conf.TEST_APP
     test_count = project_conf.TEST_COUNT
-
-    if test_app == 'all':
-        case_path = os.path.join(project_conf.PROJECT_PATH, 'testcase')
-    else:
-        case_path = os.path.join(project_conf.PROJECT_PATH,
-                                 'testcase',
-                                 case_file_list.get(test_app))
-
-    logging.info('test app is %s' % test_app)
+    logging.info('test app is %s' % project_conf.TEST_APP)
     logging.info('test count is %s' % test_count)
+
+    if project_conf.TEST_APP == 'all':
+        case_path = os.path.join(
+                                 project_conf.PROJECT_PATH,
+                                 'testcase')
+    else:
+        case_path = os.path.join(
+                                 project_conf.PROJECT_PATH,
+                                 'testcase',
+                                 case_file_list.get(project_conf.TEST_APP))
+
     logging.info('testcase path is %s' % case_path)
 
     return case_path, test_count
@@ -49,11 +53,10 @@ def get_test_file():
 
 def get_report_path():
     """取得测试报告的路径"""
-    allure_path = os.path.join(project_conf.PROJECT_PATH,
-                               'report',
+
+    allure_path = os.path.join(project_conf.REPORT_DIR,
                                '%s_allure_results' % project_conf.PROJECT_SN)
-    allure_report_path = os.path.join(project_conf.PROJECT_PATH,
-                                      'report',
+    allure_report_path = os.path.join(project_conf.REPORT_DIR,
                                       '%s_report' % project_conf.PROJECT_SN)
 
     if not os.path.exists(allure_path):
@@ -66,10 +69,12 @@ def get_report_path():
     return allure_path, allure_report_path
 
 
-def run_config(devices):
+def run_config(devices, app, count):
     """脚本脚本运行流程及配置"""
     project_conf.PROJECT_SN = devices
-    MyLog.startLog()
+    project_conf.TEST_COUNT = count
+    project_conf.TEST_APP = app
+
     case_path, test_count = get_test_file()
 
     allure_path, allure_report_path = get_report_path()
@@ -81,7 +86,8 @@ def run_config(devices):
                  case_path,
                  '--alluredir=%s' % allure_path,
                  '--count=%d' % test_count,
-                 '--repeat-scope=function'])
+                 '--repeat-scope=function'
+                 ])
     os.system('allure generate %s -o %s --clean' %
               (allure_path, allure_report_path))
 
@@ -90,19 +96,49 @@ def run_config(devices):
     # logging.info('Mail has been sent')
 
 
-def main():
-    p = []
+# 全局进程，用于停止进程后不退出UI界面，只结束进程
+# test_thread = None
+
+
+# def main(app, count,):
+#     devices = getphonelist()
+#     global p
+#     # 每一次需要清空进程列表，否则出无法启动进程两次的错误
+#     p = []
+#     for i in devices:
+#         i = Process(target=run_config, args=(i, app, count))
+#         p.append(i)
+#     for i in p:
+#         i.start()
+#
+#
+# def stop():
+#     # 停止测试进程
+#     for i in p:
+#         try:
+#             i.kill()
+#             logging.info('test is stoped')
+#         except AttributeError:
+#             logging.info('please start a test')
+
+#使用线程，多开UI界面
+
+def main(app, count,):
     devices = getphonelist()
-    for i in devices:
-        i = Process(target=run_config, args=(i,))
-        p.append(i)
-    for i in p:
-        i.start()
+    global test_thread
+    # 每一次需要清空线程列表，否则出无法启动进程两次的错误
 
-    # 此处不能加join，否则gui会无响应
+    test_thread = Thread(target=run_config, args=(devices[0], app, count))
+    #设置为守护线程，当UI退出，则立退终止线程
+    test_thread.daemon = True
+    test_thread.start()
+
+    # for i in devices:
+    #     i = Thread(target=run_config, args=(i, app, count))
+    #     p.append(i)
+    #     i.setDaemon(True)
     # for i in p:
-    #     i.join()
+    #     i.start()
 
-# def go():
-#     p = Process(target=main)
-#     p.start()
+if __name__ == '__main__':
+    myui.m_window().main_window()

@@ -16,7 +16,6 @@ class TestCase_Message():
         self.tc.m_connect()
 
     def setup(self):
-        # self.tc.mclick_home()
         self.tc.m_app_start(self.tc.mesg_info['packagename'])
 
     @get_log
@@ -52,6 +51,7 @@ class TestCase_Message():
         self.tc.input_context()
         self.tc.attach_photo()
         self.tc.send()
+
     @pytest.mark.skip()
     @pytest.mark.parametrize('s_meun,t_meun',
                              Base().m_get_meun('message.yaml'))

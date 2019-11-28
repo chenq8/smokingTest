@@ -1,18 +1,25 @@
+import os
 import tkinter as tk
 from tkinter import ttk
-import m_main
 
+import MyLog
+import m_main
+import project_conf
+import logging
 
 class m_window():
     def __init__(self):
         self.root = None
-        self.app_list = ['all','call', 'contact', 'message', 'chrome']
-        self.count_list = [1,5,10,15,20,25,30,50,100]
+        self.app_list = ['all', 'call', 'contact', 'message', 'chrome']
+        self.count_list = [1, 5, 10, 15, 20, 25, 30, 50, 100]
+        # 窗口的宽高
         self.window_width = None
         self.window_height = None
-        self.test_log_text = None
+        # 各控件的textvariable
+        self.test_log_val = None
         self.test_app_val = None
         self.test_count_val = None
+
 
     def set_screen_senter(self):
         # 设置窗口屏幕居中显示
@@ -40,12 +47,11 @@ class m_window():
                                     state='readonly',
                                     textvariable=self.test_app_val
                                     )
-        app_list_box.current(0)
+        app_list_box.current(4)
         test_app_lab.pack(side=tk.LEFT, )
         app_list_box.pack(side=tk.LEFT, padx=10)
         # 创建事件，当下拉选择一个值时，执行set_test_app方法
-        app_list_box.bind("<<ComboboxSelected>>", self.set_test_app)
-
+        # app_list_box.bind("<<ComboboxSelected>>", self.set_test_app)
 
         # 重复次数
         repeat_count = tk.Label(args_frame,
@@ -55,26 +61,30 @@ class m_window():
                                         values=self.count_list,
                                         textvariable=self.test_count_val,
                                         )
-        repeat_count_box.bind("<<ComboboxSelected>>", self.set_test_count)
+        repeat_count_box.current(0)
+        # repeat_count_box.bind("<<ComboboxSelected>>", self.set_test_count)
 
         repeat_count.pack(side=tk.LEFT, padx=10)
         repeat_count_box.pack(side=tk.LEFT)
         return args_frame
 
     def view_log_frame(self):
+        """log显示框架"""
         # 运行log显示文本框
         root = self.root
         log_frame = tk.Frame(root)
+
         test_log = tk.Label(log_frame, text='Test Log')
-        self.test_log_text = tk.Text(log_frame,
-                                     textvariable=None,
-                                     height=self.window_height / 17,
-                                     )
+        test_log_text = tk.Text(log_frame,
+                                height=self.window_height / 17,
+                                )
+        project_conf.VIEW_TEXT = test_log_text
         test_log.pack(anchor=tk.W)
-        self.test_log_text.pack(fill='both', pady=10)
+        test_log_text.pack(fill='both', pady=10)
         return log_frame
 
     def run_frame(self):
+        """运行停止按键框架"""
         root = self.root
         pad_val = self.window_width / 15
         bt_width = 9
@@ -83,30 +93,54 @@ class m_window():
         run_bt = tk.Button(run_frame,
                            text='run',
                            width=bt_width,
-                           command=m_main.main,
-                           # command=m_main.main
+                           command=self.run_test,
+                           # command=m_main.test_main
                            )
 
-        stop_bt = tk.Button(run_frame,
-                            text='stop',
-                            width=bt_width,
-                            command=self.set_test_app)
+        # stop_bt = tk.Button(run_frame,
+        #                     text='stop',
+        #                     width=bt_width,
+        #                     command=m_main.stop)
         # 查看截图
         view_screenshot_bt = tk.Button(run_frame,
                                        text='View Screenshot',
+                                       command=self.open_screenshot
                                        )
         # 查看报告
         view_report_bt = tk.Button(run_frame,
                                    text='View Report',
+                                   command=self.open_report
                                    )
 
         view_report_bt.pack(side=tk.RIGHT, padx=10)
         view_screenshot_bt.pack(side=tk.RIGHT, padx=pad_val)
-        stop_bt.pack(side=tk.RIGHT, padx=10)
-        run_bt.pack(side=tk.RIGHT, padx=pad_val)
+        # stop_bt.pack(side=tk.RIGHT, padx=10)
+        run_bt.pack(side=tk.RIGHT, padx=10)
         return run_frame
 
+    def run_test(self):
+        """"启动测试"""
+        app = self.test_app_val.get()
+        count = self.test_count_val.get()
+        m_main.main(app, count,)
+
+    def open_report(self):
+        """打开测试报告文件夹"""
+        if os.path.exists(project_conf.REPORT_DIR):
+            os.system('start explorer %s' % project_conf.REPORT_DIR)
+        else:
+            logging.info('can not open this report dir,check exists?')
+
+    def open_screenshot(self):
+        """打开失败截图文件夹"""
+        if os.path.exists(project_conf.SCREENSHOT_DIR):
+            os.system('start explorer %s' % project_conf.SCREENSHOT_DIR)
+        else:
+            logging.info('can not open this screenshot dir,check exists?')
+
     def main_window(self):
+        """窗口主入口"""
+
         self.root = tk.Tk()
         root = self.root
         # root = tk.Tk()
@@ -121,18 +155,9 @@ class m_window():
                                    padx=10, pady=10,
                                    )
         self.run_frame().pack(fill='x', )
+
+        MyLog.startLog(project_conf.VIEW_TEXT)
         root.mainloop()  # 进入消息循环（必需组件）
-
-    def set_test_app(self,event):
-        """设置测试的APP"""
-        # project_conf.TEST_APP = self.test_app_val.get()
-        # print(project_conf.TEST_APP)
-        return self.test_app_val.get()
-
-    def set_test_count(self,event):
-        # project_conf.TEST_COUNT = self.test_count_val.get()
-        # print(project_conf.TEST_COUNT)
-        return self.test_count_val.get()
 
 
 if __name__ == '__main__':

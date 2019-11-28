@@ -24,9 +24,8 @@ class Base():
             # self.d.set_fastinput_ime(True)
             logging.info('connect to %s success'%project_conf.PROJECT_SN)
             return self.d
-        except Exception as e:
-            logging.error(e)
-            logging.error('connect fail')
+        except Exception:
+            logging.exception('connect fail')
 
     def m_get_info(self):
         """取得设备信息"""
@@ -59,9 +58,8 @@ class Base():
             else:
                 self.d.app_start(packagename)
                 logging.info('app %s start done' % packagename)
-        except Exception as e:
-            logging.error(e)
-            logging.error("APP %s start fial" % packagename)
+        except Exception:
+            logging.exception("APP %s start fial" % packagename)
             name = sys._getframe(1).f_code.co_name
             self.m_screenshot(name)
 
@@ -78,9 +76,8 @@ class Base():
         try:
             ele = self.d(**kwargs)
             return ele
-        except Exception as e:
-            logging.error(e)
-            logging.error('Not Found Element %s' % kwargs)
+        except Exception:
+            logging.exception('Not Found Element %s' % kwargs)
             name = sys._getframe(1).f_code.co_name
             self.m_screenshot(name)
             assert False,'can not found element'
@@ -89,9 +86,8 @@ class Base():
         """返回控件文本"""
         try:
             return self.d(**kwargs).get_text()
-        except Exception as e:
-            logging.error(e)
-            logging.error('Not Found Element %s' % kwargs)
+        except Exception:
+            logging.exception('Not Found Element %s' % kwargs)
             name = sys._getframe(1).f_code.co_name
             self.m_screenshot(name)
             assert False, 'can not found element'
@@ -109,9 +105,8 @@ class Base():
             else:
                 self.d(**kwargs).click()
                 logging.info('clicked Element %s' % kwargs)
-        except Exception as e:
-            logging.error(e)
-            logging.error('Not Found Element %s' % kwargs)
+        except Exception:
+            logging.exception('Not Found Element %s' % kwargs,exc_info=True)
             name = sys._getframe(1).f_code.co_name
             self.m_screenshot(name)
             assert False,'can not found element'
@@ -127,9 +122,8 @@ class Base():
                 x, y = self.d(**kwargs).center()
                 self.d.swipe(x, y, x, y, 2)
                 logging.info('long clicked Element %s'%kwargs)
-        except Exception as e:
-            logging.error(e)
-            logging.error('Not Found Element %s'% kwargs)
+        except Exception:
+            logging.exception('Not Found Element %s'% kwargs)
             name = sys._getframe(1).f_code.co_name
             self.m_screenshot(name)
             assert False,'can not found element'
@@ -139,9 +133,8 @@ class Base():
         try:
             self.d(**kwargs).send_keys(mstring)
             logging.info('input mstring %s' % mstring)
-        except Exception as e:
-            logging.error(e)
-            logging.error('input error %s' % mstring)
+        except Exception:
+            logging.exception('input error %s' % mstring)
             name = sys._getframe(1).f_code.co_name
             self.m_screenshot(name)
             assert False,'can not find element'
@@ -155,18 +148,20 @@ class Base():
         logging.info('fail picture name is %s'%filename)
         filepath = os.path.join(project_conf.PROJECT_PATH,
                                 'failpicture',
-                                filename)
+                                )
+        if not os.path.exists(filepath):
+            os.makedirs(filepath)
+        file = os.path.join(filepath,filename)
         try:
             filebytes = ''
-            with open(self.d.screenshot(filepath), 'rb') as file:
+            with open(self.d.screenshot(file), 'rb') as file:
                 filebytes = file.read()
             allure.attach(filebytes,
                           'fail scrennshot',
                           attachment_type=allure.attachment_type.PNG)
             logging.info('screenshot success')
-        except Exception as e:
-            logging.error(e)
-            logging.info('screenshot fail')
+        except Exception:
+            logging.exception('screenshot fail')
 
     def m_get_data(self, filename):
         """取得APP中配置文件中操作数据"""
@@ -191,7 +186,3 @@ class Base():
     def m_scroll_to_end(self):
         """滚至最后"""
         self.d(scrollable=True).scroll.toEnd()
-
-if __name__ == '__main__':
-
-    Base().m_connect()

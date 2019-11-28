@@ -53,10 +53,6 @@ class TestCase_contact():
         if s_meun is 'My info':
             self.tc.m_click_back()
             self.tc.m_click_back()
-        # elif s_meun is 'Blocked numbers':
-        #     self.tc.mclick_back()
-        #     # self.mclick(className=self.contact_info['block_number'])
-        #     # self.tc.mapp_stop('com.android.server.telecom')
         else:
             self.tc.m_click_back()
         assert t in t_meun

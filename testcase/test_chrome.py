@@ -1,11 +1,7 @@
 import pytest
-
 from page.base import Base
-import MyLog
+from MyLog import *
 from page.chrome_page import Chrome
-
-from MyLog import get_log
-
 
 class TestCase_Chrome():
     """联系人应用测试类，只可以使用contact类中的方法"""
@@ -40,7 +36,7 @@ class TestCase_Chrome():
 
 
 if __name__ == "__main__":
-    MyLog.startLog()
+    startLog()
     pytest.main([r'D:\mytools\SmokingTestCase\testcase\test_chrome.py'
                  r'::TestCase_Chrome::test_open_baidu',
                  ])
