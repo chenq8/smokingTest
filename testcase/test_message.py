@@ -1,11 +1,11 @@
 import pytest
 
 from page.base import Base
-import MyLog
+import mylog
 from page.message_page import Message
 import logging
 
-from MyLog import get_log
+from mylog import get_log
 
 
 class TestCase_Message():
@@ -55,7 +55,7 @@ class TestCase_Message():
     @pytest.mark.skip()
     @pytest.mark.parametrize('s_meun,t_meun',
                              Base().m_get_meun('message.yaml'))
-    def test_message_meun(self,s_meun,t_meun):
+    def test_message_meun(self, s_meun, t_meun):
         """测试遍历菜单"""
         self.tc.click_setting()
         self.tc.m_click(text=s_meun)
@@ -71,6 +71,6 @@ class TestCase_Message():
 
 
 if __name__ == "__main__":
-    MyLog.startLog()
+    mylog.start_log()
     pytest.main([r'D:\mytools\SmokingTestCase\testcase\test_message.py::'
                  r'TestCase_Message::test_meun'])

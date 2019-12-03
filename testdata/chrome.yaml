@@ -9,7 +9,7 @@ input_url: com.android.chrome:id/search_box_text
 #百度弹出允许使用位置框
 location: android:id/button
 #百度搜索按钮id
-search_bt: index-bn2
+search_bt: index-bn
 #打开网页后的地址栏
 top_url: com.android.chrome:id/url_bar
 #菜单按钮

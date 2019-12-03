@@ -1,10 +1,10 @@
 import pytest
 
 from page.base import Base
-import MyLog
+import mylog
 from page.contact_page import Contact
 
-from MyLog import get_log
+from mylog import get_log
 
 
 class TestCase_contact():
@@ -62,5 +62,5 @@ class TestCase_contact():
 
 
 if __name__ == "__main__":
-    MyLog.startLog()
+    mylog.start_log()
     pytest.main(['-q', r'D:\mytools\SmokingTestCase\testcase\test_contact.py'])

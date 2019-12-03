@@ -1,7 +1,10 @@
 import pytest
+
+import mylog
 from page.base import Base
-from MyLog import *
+from mylog import *
 from page.chrome_page import Chrome
+
 
 class TestCase_Chrome():
     """联系人应用测试类，只可以使用contact类中的方法"""
@@ -19,10 +22,10 @@ class TestCase_Chrome():
         self.tc.input_url("www.baidu.com")
         assert '百度一下' in self.tc.get_baidu_text()
 
-    @pytest.mark.skip()
+
     @pytest.mark.parametrize('s_meun,t_meun',
                              Base().m_get_meun('chrome.yaml'))
-    def test_chrome_meun(self,s_meun,t_meun):
+    def test_chrome_meun(self, s_meun, t_meun):
         """测试遍历菜单"""
         self.tc.click_meun()
         self.tc.click_setting()
@@ -33,10 +36,3 @@ class TestCase_Chrome():
 
     def teardown(self):
         self.tc.m_app_stop(self.tc.chrome_info['packagename'])
-
-
-if __name__ == "__main__":
-    startLog()
-    pytest.main([r'D:\mytools\SmokingTestCase\testcase\test_chrome.py'
-                 r'::TestCase_Chrome::test_open_baidu',
-                 ])

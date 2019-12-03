@@ -1,5 +1,7 @@
 from page.base import Base
 import logging
+import project_conf
+
 
 class Chrome(Base):
     def __init__(self):

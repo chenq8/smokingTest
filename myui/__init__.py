@@ -1,11 +1,32 @@
 import os
+import time
 import tkinter as tk
+from threading import Thread
 from tkinter import ttk
-
-import MyLog
-import m_main
+import ctypes
+import inspect
 import project_conf
+import m_main
 import logging
+
+
+def __async_raise(thread_Id, exctype):
+    """线程结束实现"""
+    thread_Id = ctypes.c_long(thread_Id)
+    if not inspect.isclass(exctype):
+        exctype = type(exctype)
+    res = ctypes.pythonapi.PyThreadState_SetAsyncExc(thread_Id, ctypes.py_object(exctype))
+    if res == 0:
+        raise ValueError("invalid thread id")
+    elif res != 1:
+        ctypes.pythonapi.PyThreadState_SetAsyncExc(thread_Id, None)
+        raise SystemError("PyThreadState_SEtAsyncExc failed")
+
+
+def terminator(thread):
+    # 结束线程
+    __async_raise(thread.ident, SystemExit)
+
 
 class m_window():
     def __init__(self):
@@ -19,7 +40,8 @@ class m_window():
         self.test_log_val = None
         self.test_app_val = None
         self.test_count_val = None
-
+        self.text_log_view = None
+        self.read_file_thread = None
 
     def set_screen_senter(self):
         # 设置窗口屏幕居中显示
@@ -50,8 +72,6 @@ class m_window():
         app_list_box.current(4)
         test_app_lab.pack(side=tk.LEFT, )
         app_list_box.pack(side=tk.LEFT, padx=10)
-        # 创建事件，当下拉选择一个值时，执行set_test_app方法
-        # app_list_box.bind("<<ComboboxSelected>>", self.set_test_app)
 
         # 重复次数
         repeat_count = tk.Label(args_frame,
@@ -62,7 +82,6 @@ class m_window():
                                         textvariable=self.test_count_val,
                                         )
         repeat_count_box.current(0)
-        # repeat_count_box.bind("<<ComboboxSelected>>", self.set_test_count)
 
         repeat_count.pack(side=tk.LEFT, padx=10)
         repeat_count_box.pack(side=tk.LEFT)
@@ -75,12 +94,11 @@ class m_window():
         log_frame = tk.Frame(root)
 
         test_log = tk.Label(log_frame, text='Test Log')
-        test_log_text = tk.Text(log_frame,
-                                height=self.window_height / 17,
-                                )
-        project_conf.VIEW_TEXT = test_log_text
+        self.text_log_view = tk.Text(log_frame,
+                                     height=self.window_height / 17,
+                                     )
         test_log.pack(anchor=tk.W)
-        test_log_text.pack(fill='both', pady=10)
+        self.text_log_view.pack(fill='both', pady=10)
         return log_frame
 
     def run_frame(self):
@@ -93,14 +111,14 @@ class m_window():
         run_bt = tk.Button(run_frame,
                            text='run',
                            width=bt_width,
-                           command=self.run_test,
+                           command=self.run_case,
                            # command=m_main.test_main
                            )
 
-        # stop_bt = tk.Button(run_frame,
-        #                     text='stop',
-        #                     width=bt_width,
-        #                     command=m_main.stop)
+        stop_bt = tk.Button(run_frame,
+                            text='stop',
+                            width=bt_width,
+                            command=self.stop_case)
         # 查看截图
         view_screenshot_bt = tk.Button(run_frame,
                                        text='View Screenshot',
@@ -114,15 +132,26 @@ class m_window():
 
         view_report_bt.pack(side=tk.RIGHT, padx=10)
         view_screenshot_bt.pack(side=tk.RIGHT, padx=pad_val)
-        # stop_bt.pack(side=tk.RIGHT, padx=10)
-        run_bt.pack(side=tk.RIGHT, padx=10)
+        stop_bt.pack(side=tk.RIGHT, padx=10)
+        run_bt.pack(side=tk.RIGHT, padx=pad_val)
         return run_frame
 
-    def run_test(self):
+    def run_case(self):
         """"启动测试"""
         app = self.test_app_val.get()
         count = self.test_count_val.get()
-        m_main.main(app, count,)
+        m_main.main(app, count, )
+        self.read_file_thread = Thread(target=self.read_log, )
+        self.read_file_thread.setDaemon(True)
+        self.read_file_thread.start()
+
+    def stop_case(self):
+        m_main.stop()
+        self.text_log_view.insert('end', 'Test Process is stoped'+'\n')
+        try:
+            terminator(self.read_file_thread)
+        except:
+            logging.exception('thread error:')
 
     def open_report(self):
         """打开测试报告文件夹"""
@@ -137,6 +166,21 @@ class m_window():
             os.system('start explorer %s' % project_conf.SCREENSHOT_DIR)
         else:
             logging.info('can not open this screenshot dir,check exists?')
+
+    def read_log(slef):
+        position = 0
+        with open(project_conf.LOG_PATH, mode='r', encoding='utf8') as f1:
+            while True:
+                line = f1.readline().strip()
+                if line:
+                    slef.text_log_view.insert('end', line + '\n')
+                    slef.text_log_view.see('end')
+                cur_position = f1.tell()  # 记录上次读取文件的位置
+                if cur_position == position:
+                    time.sleep(0.1)
+                    continue
+                else:
+                    position = cur_position
 
     def main_window(self):
         """窗口主入口"""
@@ -155,9 +199,7 @@ class m_window():
                                    padx=10, pady=10,
                                    )
         self.run_frame().pack(fill='x', )
-
-        MyLog.startLog(project_conf.VIEW_TEXT)
-        root.mainloop()  # 进入消息循环（必需组件）
+        root.mainloop()
 
 
 if __name__ == '__main__':

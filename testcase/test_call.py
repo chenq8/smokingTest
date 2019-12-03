@@ -1,13 +1,14 @@
 import pytest
 
 from page.base import Base
-import MyLog
+import mylog
 from page.call_page import Call
-from MyLog import get_log
+from mylog import get_log
 
 
 class TestCase_Call():
     """联系人应用测试类，只可以使用contact类中的方法"""
+
     def setup_class(self):
         self.tc = Call()
         self.tc.m_connect()
@@ -29,7 +30,7 @@ class TestCase_Call():
     @pytest.mark.skip()
     @pytest.mark.parametrize('s_meun,t_meun',
                              Base().m_get_meun('call.yaml'))
-    def test_call_meun(self,s_meun,t_meun):
+    def test_call_meun(self, s_meun, t_meun):
         """测试遍历菜单"""
         self.tc.click_meun()
         self.tc.click_setting()
@@ -43,6 +44,6 @@ class TestCase_Call():
 
 
 if __name__ == "__main__":
-    MyLog.startLog()
+    mylog.start_log()
     pytest.main([r'D:\mytools\SmokingTestCase\testcase\test_call.py::TestCase_Call::test_make_call',
                  ])

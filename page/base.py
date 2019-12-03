@@ -1,11 +1,10 @@
 import uiautomator2 as u2
 import logging
-import os
-import time
-import yaml
-import sys
 import allure
-import uuid
+import time
+import os
+import sys
+import yaml
 import project_conf
 
 
@@ -15,14 +14,14 @@ class Base():
     def __init__(self):
         self.d = None
 
-    def m_connect(self,*args):
+    def m_connect(self, *args):
         """连接服务"""
         try:
             self.d = u2.connect(project_conf.PROJECT_SN)
             self.d.click_post_delay = 1.5
             self.d.implicitly_wait(5)
             # self.d.set_fastinput_ime(True)
-            logging.info('connect to %s success'%project_conf.PROJECT_SN)
+            logging.info('connect to %s success' % project_conf.PROJECT_SN)
             return self.d
         except Exception:
             logging.exception('connect fail')
@@ -80,7 +79,7 @@ class Base():
             logging.exception('Not Found Element %s' % kwargs)
             name = sys._getframe(1).f_code.co_name
             self.m_screenshot(name)
-            assert False,'can not found element'
+            assert False, 'can not found element'
 
     def m_get_ele_text(self, **kwargs):
         """返回控件文本"""
@@ -106,10 +105,10 @@ class Base():
                 self.d(**kwargs).click()
                 logging.info('clicked Element %s' % kwargs)
         except Exception:
-            logging.exception('Not Found Element %s' % kwargs,exc_info=True)
+            logging.exception('Not Found Element %s' % kwargs, exc_info=True)
             name = sys._getframe(1).f_code.co_name
             self.m_screenshot(name)
-            assert False,'can not found element'
+            assert False, 'can not found element'
 
     def m_long_click(self, index=None, **kwargs):
         """长按操作,当前版本不支持长按操作，使用滑动到同一个点来实现长按操作"""
@@ -121,12 +120,12 @@ class Base():
             else:
                 x, y = self.d(**kwargs).center()
                 self.d.swipe(x, y, x, y, 2)
-                logging.info('long clicked Element %s'%kwargs)
+                logging.info('long clicked Element %s' % kwargs)
         except Exception:
-            logging.exception('Not Found Element %s'% kwargs)
+            logging.exception('Not Found Element %s' % kwargs)
             name = sys._getframe(1).f_code.co_name
             self.m_screenshot(name)
-            assert False,'can not found element'
+            assert False, 'can not found element'
 
     def m_input(self, mstring, **kwargs):
         """控件输入，mstring为输入的内容，**kwargs为控件查找方式"""
@@ -137,21 +136,21 @@ class Base():
             logging.exception('input error %s' % mstring)
             name = sys._getframe(1).f_code.co_name
             self.m_screenshot(name)
-            assert False,'can not find element'
+            assert False, 'can not find element'
 
     def m_screenshot(self, name):
         """以当前时间+调用函数名命名截图"""
 
         tformat = '%Y_%m_%d_%H%M%S'
         mytime = time.strftime(tformat, time.localtime())
-        filename = '%s_%s_%s_.png'%(mytime,project_conf.PROJECT_SN,name)
-        logging.info('fail picture name is %s'%filename)
-        filepath = os.path.join(project_conf.PROJECT_PATH,
+        filename = '%s_%s_%s_.png' % (mytime, project_conf.PROJECT_SN, name)
+        logging.info('fail picture name is %s' % filename)
+        filepath = os.path.join(os.getcwd(),
                                 'failpicture',
                                 )
         if not os.path.exists(filepath):
             os.makedirs(filepath)
-        file = os.path.join(filepath,filename)
+        file = os.path.join(filepath, filename)
         try:
             filebytes = ''
             with open(self.d.screenshot(file), 'rb') as file:
@@ -165,11 +164,10 @@ class Base():
 
     def m_get_data(self, filename):
         """取得APP中配置文件中操作数据"""
-
         path = os.path.join(project_conf.PROJECT_PATH,
                             'testdata',
                             filename)
-        with open(path, 'r',encoding='utf-8') as file:
+        with open(path, 'r', encoding='utf-8') as file:
             files = file.read()
         return yaml.load(files, Loader=yaml.SafeLoader)
 
