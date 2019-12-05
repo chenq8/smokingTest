@@ -1,3 +1,4 @@
+import multiprocessing
 import os
 import time
 import tkinter as tk
@@ -200,7 +201,6 @@ class m_window():
                                    )
         self.run_frame().pack(fill='x', )
         root.mainloop()
-
 
 if __name__ == '__main__':
     m_window().main_window()

@@ -11,7 +11,7 @@ import mylog
 import project_conf
 from threading import Thread
 from subprocess import Popen, PIPE
-import myui
+import run_ui
 from page import base
 import sys
 
@@ -234,11 +234,3 @@ def stop():
             logging.info('test is stoped')
         except AttributeError:
             logging.info('please start a test')
-
-
-if __name__ == '__main__':
-    myui.m_window().main_window()
-    # mylog.start_log()
-    # pytest.main([r'D:\mytools\SmokingTestCase\testcase\test_chrome.py'
-    #              r'::TestCase_Chrome::test_open_baidu',
-    #              ])
