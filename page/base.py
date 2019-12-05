@@ -7,6 +7,17 @@ import sys
 import yaml
 import project_conf
 
+def add_picture_to_report(filepath):
+    filebytes = ''
+    with open(filepath, 'rb') as file:
+        filebytes = file.read()
+    allure.attach(filebytes,
+                  'fail scrennshot',
+                  attachment_type=allure.attachment_type.PNG)
+def path_exit(path):
+    """确保目录存在"""
+    if not os.path.exists(path):
+        os.makedirs(path)
 
 class Base():
     """页面及元素操作的所有公共方法"""
@@ -19,7 +30,7 @@ class Base():
         try:
             self.d = u2.connect(project_conf.PROJECT_SN)
             self.d.click_post_delay = 1.5
-            self.d.implicitly_wait(5)
+            self.d.implicitly_wait(10)
             # self.d.set_fastinput_ime(True)
             logging.info('connect to %s success' % project_conf.PROJECT_SN)
             return self.d
@@ -32,7 +43,7 @@ class Base():
 
     def m_input_enter(self):
         """输入完成后，直接搜索，模拟输入法搜索"""
-        self.d.send_action('search')
+        self.d.press('enter')
         logging.info('clicked search')
 
     def m_click_home(self):
@@ -150,14 +161,11 @@ class Base():
                                 )
         if not os.path.exists(filepath):
             os.makedirs(filepath)
-        file = os.path.join(filepath, filename)
+        picture_file = os.path.join(filepath, filename)
+
         try:
-            filebytes = ''
-            with open(self.d.screenshot(file), 'rb') as file:
-                filebytes = file.read()
-            allure.attach(filebytes,
-                          'fail scrennshot',
-                          attachment_type=allure.attachment_type.PNG)
+            self.d.screenshot(picture_file)
+            add_picture_to_report(picture_file)
             logging.info('screenshot success')
         except Exception:
             logging.exception('screenshot fail')

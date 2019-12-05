@@ -169,7 +169,7 @@ class m_window():
 
     def read_log(slef):
         position = 0
-        with open(project_conf.LOG_PATH, mode='r', encoding='utf8') as f1:
+        with open(project_conf.TEST_LOG_PATH, mode='r',) as f1:
             while True:
                 line = f1.readline().strip()
                 if line:

@@ -22,7 +22,7 @@ class TestCase_Chrome():
         self.tc.input_url("www.baidu.com")
         assert '百度一下' in self.tc.get_baidu_text()
 
-
+    @pytest.mark.skip()
     @pytest.mark.parametrize('s_meun,t_meun',
                              Base().m_get_meun('chrome.yaml'))
     def test_chrome_meun(self, s_meun, t_meun):

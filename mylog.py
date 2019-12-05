@@ -10,7 +10,7 @@ def start_log(text_view=None):
     mytime = time.strftime(tformat, time.localtime())
     pr = logging.StreamHandler()
     # 将log输出至文件
-    file = logging.FileHandler(project_conf.LOG_PATH, 'w+')
+    file = logging.FileHandler(project_conf.TEST_LOG_PATH, 'w+')
     logging.basicConfig(level=logging.INFO, handlers=[pr,file],
                         format="%(asctime)s,%(name)s,%(levelname)s : %(message)s"
                         )
