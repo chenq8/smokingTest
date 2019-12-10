@@ -2,8 +2,7 @@ import os
 import logging
 import subprocess
 import time
-from multiprocessing import Process, Value
-
+from multiprocessing import Process
 import allure
 from adbutils import adb
 import pytest
@@ -11,24 +10,17 @@ import mylog
 import project_conf
 from threading import Thread
 from subprocess import Popen, PIPE
-import run_ui
 from page import base
-import sys
-
-# def resource_path():
-#     if getattr(sys, 'frozen', False):  # 是否Bundle Resource
-#         base_path = sys._MEIPASS
-#     else:
-#         base_path = os.path.abspath(os.getcwd())
-#     return os.path.join(base_path)
+from sys import argv
 
 
-def add_text_to_allure(filepath,name):
+def add_text_to_allure(filepath, name):
     filebytes = ''
     with open(filepath, 'rb') as file:
         filebytes = file.read()
-    allure.attach(filebytes,name,
+    allure.attach(filebytes, name,
                   attachment_type=allure.attachment_type.TEXT)
+
 
 def getphonelist():
     """ 获取手机设备"""
@@ -66,9 +58,6 @@ def get_test_file():
             project_conf.PROJECT_PATH,
             'testcase',
             case_file_list.get(project_conf.TEST_APP))
-
-    # logging.info('testcase path is %s' % case_path)
-
     return case_path, test_count
 
 
@@ -91,7 +80,7 @@ def get_report_path():
 def monitor_logcat(device):
     """监控logcat"""
     logging.info('start logcat monitor')
-    logcat = subprocess.Popen('adb logcat -v time',
+    logcat = subprocess.Popen('adb -s %s logcat -v time' % project_conf.PROJECT_SN,
                               stdout=subprocess.PIPE,
                               stderr=subprocess.PIPE)
     base.path_exit(project_conf.ANDROID_LOG_PATH)
@@ -101,14 +90,15 @@ def monitor_logcat(device):
                             )
     pic_path = os.path.join(project_conf.SCREENSHOT_DIR,
                             'crash_%s_%s.png' %
-                            (get_local_time(),device))
+                            (get_local_time(), device))
     while True:
         s = logcat.stdout.readline()
         if ' ANR ' in str(s) or ' Fatal ' in str(s):
-            os.system('adb exec-out screencap -p > %s'%pic_path)
+            os.system('adb -s %s exec-out screencap -p > %s' %
+                      (project_conf.PROJECT_SN, pic_path))
             base.add_picture_to_report(pic_path)
-            os.system('adb logcat -d > %s' % log_path, )
-            add_text_to_allure(log_path,'crash_log')
+            os.system('adb -s %s logcat -d > %s' % (project_conf.PROJECT_SN, log_path))
+            add_text_to_allure(log_path, 'crash_log')
             logging.critical('Found ANR or Fatal,log was save to %s' %
                              log_path)
             assert False
@@ -122,19 +112,19 @@ def monitor_adb(device):
         if not event.present:
             log_path = os.path.join(project_conf.ANDROID_LOG_PATH,
                                     '%s_%s_adb disconnect_logcat.log' %
-                                    (get_local_time(),device)
+                                    (get_local_time(), device)
                                     )
             pic_path = os.path.join(project_conf.SCREENSHOT_DIR,
                                     'crash_%s_%s.png' %
                                     (get_local_time(), device))
-            os.system('adb exec-out screencap -p > %s'%pic_path)
+            os.system('adb -s %s exec-out screencap -p > %s' %
+                      (project_conf.PROJECT_SN, pic_path))
             base.add_picture_to_report(pic_path)
-            os.system('adb logcat -d > %s' % log_path)
+            os.system('adb -s %s logcat -d > %s' % (project_conf.PROJECT_SN, log_path))
             add_text_to_allure(log_path, 'adb disconnect path')
             logging.exception('adb disconnect,log was save to %s' %
                               log_path)
             assert False
-        # (event.present,event.serial,event.status)
 
 
 def m_run(case_path, allure_path, test_count, allure_report_path):
@@ -147,8 +137,6 @@ def m_run(case_path, allure_path, test_count, allure_report_path):
                  '--disable-warnings',
                  '--capture=no',
                  ])
-    # os.system("pytest -v -s %s --alluredir=%s --count=%d --repeat-scope=function" %
-    #           (case_path, allure_path, test_count))
     os.system('allure generate %s -o %s --clean' %
               (allure_path, allure_report_path))
 
@@ -163,18 +151,15 @@ def start_moitor():
     logcat_thread.start()
 
 
-def run_config(device, app, count, log_name, ):
+def run_config(device, app, count, ):
     """脚本脚本运行流程及配置"""
-    project_conf.TEST_LOG_PATH = log_name
-
+    project_conf.PROJECT_SN = device
     mylog.start_log()
-    os.system('adb logcat -c')
+    os.system('adb -s %s logcat -c' % device)
     # 开启logcat监控，出现ANR和FAtal就截图保存Log
     start_moitor()
-    project_conf.PROJECT_SN = device
     project_conf.TEST_COUNT = count
     project_conf.TEST_APP = app
-    # logging.info('main_path is %s ' % project_conf.PROJECT_PATH)
     case_path, test_count = get_test_file()
     allure_path, allure_report_path = get_report_path()
     logging.info('device is %s' % project_conf.PROJECT_SN)
@@ -210,18 +195,22 @@ def get_testlog_path(device):
 test_process = None
 
 
-def main(app, count):
+def main(app=None, count=None):
     devices = getphonelist()
     global test_process
     # 每一次需要清空进程列表，否则出无法启动进程两次的错误
     test_process = []
     for i in devices:
-        project_conf.TEST_LOG_PATH = get_testlog_path(i)
-        i = Process(target=run_config,
-                    args=(i, app, count,
-                          project_conf.TEST_LOG_PATH,
-                          ))
+        if app:
+            i = Process(target=run_config,
+                        args=(i, app, count),
+                        )
+        else:
+            i = Process(target=run_config,
+                        args=(i, argv[1], count[2]),
+                        )
         test_process.append(i)
+
     for i in test_process:
         i.start()
 
@@ -234,3 +223,7 @@ def stop():
             logging.info('test is stoped')
         except AttributeError:
             logging.info('please start a test')
+
+
+if __name__ == '__main__':
+    main('chrome', 1)

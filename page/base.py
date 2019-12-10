@@ -181,10 +181,10 @@ class Base():
 
     def m_get_meun(self, filename):
         """取得各级菜单名称"""
-        path = os.path.join(project_conf.PROJECT_PATH,
-                            'testdata',
-                            filename)
-        data = self.m_get_data(path)
+        # path = os.path.join(project_conf.PROJECT_PATH,
+        #                     'testdata',
+        #                     filename)
+        data = self.m_get_data(filename)
         meun_data = [(x, y) for x, y in
                      zip(data['secondary_meun'], data['third_meun'])]
         return meun_data

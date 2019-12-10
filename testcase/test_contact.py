@@ -1,9 +1,7 @@
 import pytest
-
 from page.base import Base
 import mylog
 from page.contact_page import Contact
-
 from mylog import get_log
 
 
